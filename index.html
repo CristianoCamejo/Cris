@@ -1,55 +1,59 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GuitarClass Online</title>
+  <title>Guitar Class Online</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="lang-switch">
-      <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="setLanguage('pt')" />
-      <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="setLanguage('en')" />
-    </div>
-    <h1 data-pt="Aulas de Guitarra Online" data-en="Online Guitar Lessons">Aulas de Guitarra Online</h1>
     <nav>
-      <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
-      <a href="#valores" data-pt="Valores" data-en="Pricing">Valores</a>
-      <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+      <ul>
+        <li><a href="#" data-pt="Início" data-en="Home">Início</a></li>
+        <li><a href="#" data-pt="Planos" data-en="Plans">Planos</a></li>
+        <li><a href="#" data-pt="Contato" data-en="Contact">Contato</a></li>
+      </ul>
+      <div class="flags">
+        <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="setLanguage('pt')">
+        <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="setLanguage('en')">
+      </div>
     </nav>
-  </header>
+  </header>  <main>
+    <section class="hero">
+      <h1 data-pt="Aulas de Guitarra Online" data-en="Online Guitar Lessons">Aulas de Guitarra Online</h1>
+      <p data-pt="Aprenda no seu ritmo, de onde estiver." data-en="Learn at your own pace, from anywhere.">Aprenda no seu ritmo, de onde estiver.</p>
+    </section><section class="plans">
+  <div class="plan">
+    <h2 data-pt="1 Aula Avulsa" data-en="1 Single Lesson">1 Aula Avulsa</h2>
+    <p>R$ 100 / $20</p>
+  </div>
+  <div class="plan">
+    <h2 data-pt="Pacote Mensal (4 aulas)" data-en="Monthly Package (4 lessons)">Pacote Mensal (4 aulas)</h2>
+    <p>R$ 350 / $75</p>
+  </div>
+  <div class="plan">
+    <h2 data-pt="Plano Personalizado" data-en="Custom Plan">Plano Personalizado</h2>
+    <p data-pt="Entre em contato para montar seu plano." data-en="Contact us to build your plan.">Entre em contato para montar seu plano.</p>
+  </div>
+</section>
 
-  <section id="sobre">
-    <p data-pt="Aprenda guitarra com aulas online ao vivo, personalizadas para todos os níveis." 
-       data-en="Learn guitar with live online lessons, tailored for all levels.">
-       Aprenda guitarra com aulas online ao vivo, personalizadas para todos os níveis.
-    </p>
-  </section>
+  </main>  <footer>
+    <p>© 2025 GuitarClass Online - Todos os direitos reservados</p>
+    <p>Email: contato@guitarclass.online | WhatsApp: +55 51 99999-9999</p>
+  </footer><a href="https://wa.me/5551999999999" class="whatsapp-button" target="_blank">WhatsApp</a>
 
-  <section id="valores" class="pricing">
-    <h2 data-pt="Planos de Aula" data-en="Lesson Plans">Planos de Aula</h2>
-    <p data-pt="4 horas/mês: R$ 150" data-en="4 hours/month: $75">4 horas/mês: R$ 150</p>
-    <p data-pt="1 hora avulsa: R$ 50" data-en="1 hour single: $15">1 hora avulsa: R$ 50</p>
-  </section>
-
-  <section id="contato">
-    <h2 data-pt="Entre em Contato" data-en="Get in Touch">Entre em Contato</h2>
-    <ul class="contact-list">
-      <li>Email: contato@guitarclass.online</li>
-      <li>WhatsApp: +55 51 98961-0859</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p data-pt="Todos os direitos reservados - GuitarClass Online" data-en="All rights reserved - GuitarClass Online">
-      Todos os direitos reservados - GuitarClass Online
-    </p>
-  </footer>
-
-  <a href="https://wa.me/5551989610859" class="whatsapp-float" target="_blank">📱</a>
-
-  <script src="script.js"></script>
-</body>
+  <div id="promo-popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
+      <h2 style="color:gold">🎉 50% de Desconto!</h2>
+      <p data-pt="Apenas para os 10 primeiros alunos." data-en="Only for the first 10 students.">Apenas para os 10 primeiros alunos.</p>
+    </div>
+  </div>  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        document.getElementById('promo-popup').style.display = 'block';
+      }, 2000);
+    }
+  </script></body>
 </html>
