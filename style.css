@@ -1,96 +1,94 @@
-/* style.css */
-
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Kanit', sans-serif;
-  background: #111;
-  color: #fff;
-  scroll-behavior: smooth;
+  padding: 0;
+  background: #f2f2f2;
+  color: #222;
 }
 
 header {
-  background: #1a1a1a;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #28a745;
+  color: white;
+  padding: 20px;
   text-align: center;
+  position: relative;
 }
 
-header h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+.language-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-.lang-switch img {
-  width: 32px;
-  margin: 0 5px;
+.language-switch img {
+  width: 24px;
+  height: 16px;
+  margin-left: 10px;
   cursor: pointer;
+  border: 1px solid #fff;
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #00ff88;
-}
-
-section {
-  padding: 2em;
-  text-align: center;
-}
-
-section#valores {
-  background: #1e1e1e;
-}
-
-.pricing p {
-  font-size: 1.2em;
-  margin: 1em 0;
-}
-
-.contact-list {
+nav ul {
   list-style: none;
   padding: 0;
-  font-size: 1em;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.contact-list li {
-  margin: 0.5em 0;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.intro, .plans, .contact {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.plans {
+  background-color: #fff;
+}
+
+.plan-card {
+  background: #e6ffe6;
+  border: 2px solid #28a745;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 300px;
+  border-radius: 8px;
 }
 
 footer {
-  background: #1a1a1a;
-  padding: 1em;
+  background-color: #28a745;
+  color: white;
   text-align: center;
-  font-size: 0.9em;
-  color: #ccc;
+  padding: 15px;
 }
 
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #25D366;
+  background: #25d366;
   color: white;
+  font-size: 24px;
+  padding: 12px 16px;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 999;
   text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.whatsapp-float a {
-  color: white;
-  text-decoration: none;
+.popup {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: gold;
+  color: #000;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 9999;
 }
