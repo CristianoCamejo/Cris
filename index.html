@@ -4,55 +4,213 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Guitar Class Online</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background-color: #006400;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem;
+    }
+    nav a {
+      color: #006400;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .lang-switch {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+    .lang-switch img {
+      width: 24px;
+      margin-left: 8px;
+      cursor: pointer;
+    }
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+    .plan {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #e0ffe0;
+      border: 1px solid #006400;
+      border-radius: 8px;
+    }
+    footer {
+      background: #006400;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: gold;
+      color: black;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 9999;
+      max-width: 300px;
+      text-align: center;
+    }
+    .popup button {
+      margin-top: 1rem;
+      background: #006400;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .popup .close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <div class="lang-switch">
+    <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="switchLanguage('pt')">
+    <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="switchLanguage('en')">
+  </div>
+
   <header>
-    <h1 class="title">Guitar Class Online</h1>
-    <div class="language-switch">
-      <img src="https://flagcdn.com/br.svg" alt="Português" id="pt-btn" />
-      <img src="https://flagcdn.com/us.svg" alt="English" id="en-btn" />
-    </div>
-    <nav id="menu">
-      <ul>
-        <li><a href="#plans">Planos</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-    </nav>
+    <h1 id="title">Aulas de Guitarra Online</h1>
   </header>
 
-  <section class="intro">
-    <h2 id="intro-title">Aulas de Guitarra Online</h2>
-    <p id="intro-text">Aprenda guitarra no seu ritmo, com aulas personalizadas e práticas ao vivo.</p>
-  </section>
+  <nav>
+    <a onclick="scrollToSection('plans')" id="menu-plans">Planos</a>
+    <a onclick="scrollToSection('contact')" id="menu-contact">Contato</a>
+  </nav>
 
-  <section id="plans" class="plans">
-    <h2 id="plans-title">Planos</h2>
-    <div class="plan-card">
-      <h3 id="plan1-title">1 Aula</h3>
-      <p id="plan1-price">R$ 100 / $20</p>
+  <section id="plans">
+    <h2 id="plans-title">Escolha seu plano</h2>
+    <div class="plan">
+      <p id="plan1">1 aula individual — R$100 / $20</p>
     </div>
-    <div class="plan-card">
-      <h3 id="plan2-title">4 Aulas por mês</h3>
-      <p id="plan2-price">R$ 350 / $75</p>
+    <div class="plan">
+      <p id="plan2">Pacote com 4 aulas — R$350 / $75</p>
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2 id="contact-title">Contato</h2>
-    <p>Email: contato@guitarclass.online</p>
-    <p>WhatsApp: <a href="https://wa.me/5551989610859" target="_blank">+55 51 98961-0859</a></p>
+    <p>Email: guitarclass.online@gmail.com</p>
+    <p>WhatsApp: +55 51 98961-0859</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Guitar Class Online. Todos os direitos reservados.</p>
+    <p id="footer-text">Todos os direitos reservados &copy; GuitarClass Online</p>
   </footer>
 
-  <a href="https://wa.me/5551989610859" class="whatsapp-float" target="_blank">💬</a>
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/5551989610859" target="_blank" class="whatsapp-button">💬</a>
 
-  <div class="popup" id="discount-popup">
-    <p><strong>🔥 50% de desconto</strong> para os 10 primeiros alunos!</p>
+  <!-- Promo Popup -->
+  <div class="popup" id="popup">
+    <span class="close" onclick="closePopup()">×</span>
+    <strong id="popup-text">50% de desconto para os 10 primeiros alunos!</strong>
+    <br>
+    <a href="https://wa.me/5551989610859" target="_blank">
+      <button id="popup-btn">Fale no WhatsApp</button>
+    </a>
   </div>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function switchLanguage(lang) {
+      const texts = {
+        pt: {
+          title: "Aulas de Guitarra Online",
+          menuPlans: "Planos",
+          menuContact: "Contato",
+          plansTitle: "Escolha seu plano",
+          plan1: "1 aula individual — R$100 / $20",
+          plan2: "Pacote com 4 aulas — R$350 / $75",
+          contactTitle: "Contato",
+          footerText: "Todos os direitos reservados © GuitarClass Online",
+          popupText: "50% de desconto para os 10 primeiros alunos!",
+          popupBtn: "Fale no WhatsApp"
+        },
+        en: {
+          title: "Online Guitar Lessons",
+          menuPlans: "Plans",
+          menuContact: "Contact",
+          plansTitle: "Choose your plan",
+          plan1: "1 private lesson — R$100 / $20",
+          plan2: "4-lesson package — R$350 / $75",
+          contactTitle: "Contact",
+          footerText: "All rights reserved © GuitarClass Online",
+          popupText: "50% discount for the first 10 students!",
+          popupBtn: "Chat on WhatsApp"
+        }
+      };
+
+      const t = texts[lang];
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("menu-plans").innerText = t.menuPlans;
+      document.getElementById("menu-contact").innerText = t.menuContact;
+      document.getElementById("plans-title").innerText = t.plansTitle;
+      document.getElementById("plan1").innerText = t.plan1;
+      document.getElementById("plan2").innerText = t.plan2;
+      document.getElementById("contact-title").innerText = t.contactTitle;
+      document.getElementById("footer-text").innerText = t.footerText;
+      document.getElementById("popup-text").innerText = t.popupText;
+      document.getElementById("popup-btn").innerText = t.popupBtn;
+    }
+
+    // Optionally show popup only once per session
+    window.onload = function() {
+      const shown = sessionStorage.getItem("popupShown");
+      if (!shown) {
+        document.getElementById("popup").style.display = "block";
+        sessionStorage.setItem("popupShown", "true");
+      } else {
+        document.getElementById("popup").style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>
