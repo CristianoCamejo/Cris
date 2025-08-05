@@ -2,160 +2,54 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GuitarClass.Online</title>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Kanit', sans-serif;
-      background: radial-gradient(circle at top, #111, #000);
-      color: #f4f4f4;
-      text-align: center;
-    }
-    header {
-      background-color: #27ae60;
-      padding: 2rem 1rem;
-      position: relative;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #fff;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      margin: 0 1rem;
-      color: #f4f4f4;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-    }
-    .lang-switch img {
-      width: 30px;
-      height: 20px;
-      margin-left: 10px;
-      cursor: pointer;
-      border: 2px solid transparent;
-    }
-    .lang-switch img:hover {
-      border-color: #fff;
-    }
-    section {
-      padding: 3rem 1rem;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .pricing {
-      font-size: 1.2rem;
-      line-height: 2rem;
-    }
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1rem;
-    }
-    .contact-list li {
-      margin: 1rem 0;
-    }
-    footer {
-      background-color: #1c1c1c;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #999;
-    }
-
-    /* Botão flutuante WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
-    }
-    .whatsapp-float a {
-      color: white;
-      display: block;
-      padding: 14px;
-      text-decoration: none;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuitarClass Online</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-
   <header>
-    <h1>🎸 GuitarClass.Online</h1>
     <div class="lang-switch">
-      <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="setLanguage('pt')">
-      <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="setLanguage('en')">
+      <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="setLanguage('pt')" />
+      <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="setLanguage('en')" />
     </div>
+    <h1 data-pt="Aulas de Guitarra Online" data-en="Online Guitar Lessons">Aulas de Guitarra Online</h1>
     <nav>
-      <a href="#inicio">Início / Home</a>
-      <a href="#valores">Valores / Pricing</a>
-      <a href="#contato">Contato / Contact</a>
+      <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+      <a href="#valores" data-pt="Valores" data-en="Pricing">Valores</a>
+      <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
     </nav>
   </header>
 
-  <section id="inicio">
-    <h2 data-pt="Aulas de Guitarra" data-en="Guitar Lessons">Aulas de Guitarra</h2>
-    <p data-pt="Do iniciante ao avançado" data-en="From beginner to advanced">Do iniciante ao avançado</p>
-    <p data-pt="Estude no seu ritmo e estilo" data-en="Learn at your pace and style">Estude no seu ritmo e estilo</p>
+  <section id="sobre">
+    <p data-pt="Aprenda guitarra com aulas online ao vivo, personalizadas para todos os níveis." 
+       data-en="Learn guitar with live online lessons, tailored for all levels.">
+       Aprenda guitarra com aulas online ao vivo, personalizadas para todos os níveis.
+    </p>
   </section>
 
-  <section id="valores">
-    <h2 data-pt="Valores" data-en="Pricing">Valores</h2>
-    <div class="pricing">
-      <p data-pt="1 hora: R$120,00 / 4 horas: R$360,00" data-en="1 hour: $25 / 4 hours: $75">1 hora: R$120,00 / 4 horas: R$360,00</p>
-    </div>
+  <section id="valores" class="pricing">
+    <h2 data-pt="Planos de Aula" data-en="Lesson Plans">Planos de Aula</h2>
+    <p data-pt="4 horas/mês: R$ 150" data-en="4 hours/month: $75">4 horas/mês: R$ 150</p>
+    <p data-pt="1 hora avulsa: R$ 50" data-en="1 hour single: $15">1 hora avulsa: R$ 50</p>
   </section>
 
   <section id="contato">
-    <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+    <h2 data-pt="Entre em Contato" data-en="Get in Touch">Entre em Contato</h2>
     <ul class="contact-list">
-      <li>
-        WhatsApp: +55 (51) 98961-0859
-      </li>
-      <li>
-        Email: contato@guitarclass.online
-      </li>
-      <li>
-        Instagram: @guitarclass.online
-      </li>
+      <li>Email: contato@guitarclass.online</li>
+      <li>WhatsApp: +55 51 98961-0859</li>
     </ul>
   </section>
 
   <footer>
-    © 2025 GuitarClass.Online - Todos os direitos reservados / All rights reserved
+    <p data-pt="Todos os direitos reservados - GuitarClass Online" data-en="All rights reserved - GuitarClass Online">
+      Todos os direitos reservados - GuitarClass Online
+    </p>
   </footer>
 
-  <!-- Botão flutuante do WhatsApp -->
-  <div class="whatsapp-float">
-    <a href="https://wa.me/5551989610859" target="_blank">💬</a>
-  </div>
+  <a href="https://wa.me/5551989610859" class="whatsapp-float" target="_blank">📱</a>
 
-  <!-- Script de tradução -->
-  <script>
-    function setLanguage(lang) {
-      document.querySelectorAll('[data-pt]').forEach(el => {
-        el.innerText = lang === 'pt' ? el.getAttribute('data-pt') : el.getAttribute('data-en');
-      });
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
