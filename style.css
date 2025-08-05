@@ -1,0 +1,96 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: 'Kanit', sans-serif;
+  background: #111;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: #1a1a1a;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.lang-switch img {
+  width: 32px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00ff88;
+}
+
+section {
+  padding: 2em;
+  text-align: center;
+}
+
+section#valores {
+  background: #1e1e1e;
+}
+
+.pricing p {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1em;
+}
+
+.contact-list li {
+  margin: 0.5em 0;
+}
+
+footer {
+  background: #1a1a1a;
+  padding: 1em;
+  text-align: center;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  text-decoration: none;
+}
+
+.whatsapp-float a {
+  color: white;
+  text-decoration: none;
+}
