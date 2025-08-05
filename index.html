@@ -1,244 +1,212 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guitar Class Online</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-    }
-
-    header {
-      background-color: #28a745;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
       margin: 0;
-      font-size: 1.5rem;
+      background-color: #f4fdf5;
+      color: #222;
     }
-
-    nav a {
-      margin: 0 0.5rem;
+    header {
+      background-color: #1b5e20;
       color: white;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 20px;
+      text-align: center;
+      position: relative;
     }
-
-    .lang-switch {
+    .flags {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    .flags img {
+      width: 32px;
+      height: 24px;
+      margin-left: 10px;
       cursor: pointer;
-      margin-left: 1rem;
+      border: 2px solid white;
+      border-radius: 4px;
     }
-
-    .main {
-      padding: 2rem;
+    main {
+      padding: 20px;
       text-align: center;
     }
-
     .plans {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
+      gap: 20px;
+      margin-top: 20px;
     }
-
     .plan {
-      background: #1d1d1d;
+      border: 2px solid #1b5e20;
       border-radius: 10px;
-      padding: 1.5rem;
+      padding: 20px;
       width: 250px;
-      box-shadow: 0 0 10px #28a74555;
+      background-color: #e8f5e9;
       transition: transform 0.3s;
     }
-
     .plan:hover {
       transform: scale(1.05);
     }
-
-    .plan h3 {
-      margin: 0 0 1rem 0;
+    .price {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #1b5e20;
     }
-
-    .plan p {
-      font-size: 1.2rem;
-    }
-
     footer {
-      text-align: center;
-      padding: 1rem;
-      background: #222;
-      color: #ccc;
-      margin-top: 2rem;
-    }
-
-    .popup {
-      position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: gold;
-      color: #000;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #000;
-      z-index: 1000;
-      display: none;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .popup h2 {
-      margin-top: 0;
-    }
-
-    .popup button {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 5px;
-      background: #28a745;
+      background-color: #1b5e20;
       color: white;
-      font-size: 1rem;
-      cursor: pointer;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
     }
-
-    .popup .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: transparent;
-      font-size: 1.2rem;
-      border: none;
-      cursor: pointer;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; top: 10%; }
-      to { opacity: 1; top: 20%; }
-    }
-
-    .whatsapp-btn {
+    .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25d366;
-      border-radius: 50%;
+      z-index: 999;
+    }
+    .whatsapp img {
       width: 60px;
       height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: gold;
+      color: #333;
+      border: 3px solid #d4af37;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      animation: fadeIn 0.5s ease-out;
+    }
+    .popup button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #1b5e20;
       color: white;
-      font-size: 2rem;
-      z-index: 999;
-      box-shadow: 0 0 10px #000;
+      border: none;
       cursor: pointer;
+      border-radius: 6px;
+    }
+    .popup .close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #111;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9) translate(-50%, -50%);}
+      to {opacity: 1; transform: scale(1) translate(-50%, -50%);}
     }
   </style>
-  <script src="https://kit.fontawesome.com/a2e0d6e5e4.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <header>
-    <h1 id="title">Guitar Class Online</h1>
-    <nav>
-      <a href="#plans" id="menuPlans">Planos</a>
-      <a href="#contact" id="menuContact">Contato</a>
-      <span class="lang-switch" onclick="switchLang('pt')">🇧🇷</span>
-      <span class="lang-switch" onclick="switchLang('en')">🇺🇸</span>
-    </nav>
+    <h1 id="title">Aulas de Guitarra Online</h1>
+    <div class="flags">
+      <img src="https://flagcdn.com/br.svg" alt="Português" onclick="changeLanguage('pt')">
+      <img src="https://flagcdn.com/us.svg" alt="English" onclick="changeLanguage('en')">
+    </div>
   </header>
 
-  <div class="main">
-    <h2 id="headline">Aulas de guitarra com professor experiente</h2>
-    <div class="plans" id="plans">
+  <main>
+    <h2 id="subtitle">Escolha seu plano:</h2>
+    <div class="plans">
       <div class="plan">
-        <h3 id="oneLesson">1 Aula</h3>
-        <p><strong id="price1">R$ 120 / $25</strong></p>
+        <h3 id="plan1">1 Aula</h3>
+        <p class="price" id="price1">R$ 120</p>
       </div>
       <div class="plan">
-        <h3 id="fourLessons">4 Aulas</h3>
-        <p><strong id="price4">R$ 360 / $75</strong></p>
+        <h3 id="plan2">4 Aulas</h3>
+        <p class="price" id="price2">R$ 360</p>
       </div>
     </div>
+  </main>
+
+  <div class="popup" id="promoPopup">
+    <button class="close" onclick="closePopup()">✖</button>
+    <h2 id="popupTitle">Promoção Especial!</h2>
+    <p id="popupMsg">50% de desconto para os 10 primeiros alunos!</p>
+    <button onclick="goToWhatsApp()">Aproveitar no WhatsApp</button>
   </div>
 
-  <div id="contact" class="main">
-    <h2 id="contactTitle">Fale com a gente</h2>
-    <p>Email: contato@guitarclass.online</p>
-    <p>WhatsApp: +55 51 98961-0859</p>
+  <div class="whatsapp">
+    <a href="https://wa.me/5551989610859" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
   </div>
 
   <footer>
-    © 2025 Guitar Class Online - Todos os direitos reservados
+    <p>© 2025 GuitarClass Online. Todos os direitos reservados.</p>
   </footer>
 
-  <div class="popup" id="popup">
-    <button class="close" onclick="closePopup()">✖</button>
-    <h2>🎸 50% de desconto!</h2>
-    <p>Para os 10 primeiros alunos! Não perca.</p>
-    <button onclick="window.open('https://wa.me/5551989610859','_blank')">Fale no WhatsApp</button>
-  </div>
-
-  <div class="whatsapp-btn" onclick="window.open('https://wa.me/5551989610859','_blank')">
-    <i class="fab fa-whatsapp"></i>
-  </div>
-
   <script>
-    const translations = {
-      pt: {
-        title: "Guitar Class Online",
-        menuPlans: "Planos",
-        menuContact: "Contato",
-        headline: "Aulas de guitarra com professor experiente",
-        oneLesson: "1 Aula",
-        fourLessons: "4 Aulas",
-        price1: "R$ 120 / $25",
-        price4: "R$ 360 / $75",
-        contactTitle: "Fale com a gente"
-      },
-      en: {
-        title: "Guitar Class Online",
-        menuPlans: "Plans",
-        menuContact: "Contact",
-        headline: "Guitar lessons with experienced teacher",
-        oneLesson: "1 Class",
-        fourLessons: "4 Classes",
-        price1: "R$ 120 / $25",
-        price4: "R$ 360 / $75",
-        contactTitle: "Contact Us"
-      }
-    };
-
-    function switchLang(lang) {
-      const t = translations[lang];
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("menuPlans").innerText = t.menuPlans;
-      document.getElementById("menuContact").innerText = t.menuContact;
-      document.getElementById("headline").innerText = t.headline;
-      document.getElementById("oneLesson").innerText = t.oneLesson;
-      document.getElementById("fourLessons").innerText = t.fourLessons;
-      document.getElementById("price1").innerText = t.price1;
-      document.getElementById("price4").innerText = t.price4;
-      document.getElementById("contactTitle").innerText = t.contactTitle;
+    function changeLanguage(lang) {
+      const texts = {
+        pt: {
+          title: "Aulas de Guitarra Online",
+          subtitle: "Escolha seu plano:",
+          plan1: "1 Aula",
+          plan2: "4 Aulas",
+          price1: "R$ 120",
+          price2: "R$ 360",
+          popupTitle: "Promoção Especial!",
+          popupMsg: "50% de desconto para os 10 primeiros alunos!",
+        },
+        en: {
+          title: "Online Guitar Lessons",
+          subtitle: "Choose your plan:",
+          plan1: "1 Lesson",
+          plan2: "4 Lessons",
+          price1: "$25",
+          price2: "$75",
+          popupTitle: "Special Offer!",
+          popupMsg: "50% OFF for the first 10 students!",
+        }
+      };
+      document.getElementById('title').innerText = texts[lang].title;
+      document.getElementById('subtitle').innerText = texts[lang].subtitle;
+      document.getElementById('plan1').innerText = texts[lang].plan1;
+      document.getElementById('plan2').innerText = texts[lang].plan2;
+      document.getElementById('price1').innerText = texts[lang].price1;
+      document.getElementById('price2').innerText = texts[lang].price2;
+      document.getElementById('popupTitle').innerText = texts[lang].popupTitle;
+      document.getElementById('popupMsg').innerText = texts[lang].popupMsg;
     }
 
     function closePopup() {
-      document.getElementById("popup").style.display = "none";
-      localStorage.setItem("popupShown", "true");
+      document.getElementById('promoPopup').style.display = 'none';
     }
 
+    function goToWhatsApp() {
+      window.open('https://wa.me/5551989610859', '_blank');
+    }
+
+    // Show popup only once per session
     window.onload = function () {
-      if (!localStorage.getItem("popupShown")) {
-        document.getElementById("popup").style.display = "block";
+      if (!sessionStorage.getItem('popupShown')) {
+        document.getElementById('promoPopup').style.display = 'block';
+        sessionStorage.setItem('popupShown', 'true');
       }
     };
   </script>
+
 </body>
 </html>
