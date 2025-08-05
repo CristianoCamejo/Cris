@@ -8,11 +8,11 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#" data-pt="Início" data-en="Home">Início</a></li>
-        <li><a href="#" data-pt="Planos" data-en="Plans">Planos</a></li>
-        <li><a href="#" data-pt="Contato" data-en="Contact">Contato</a></li>
+    <nav class="navbar">
+      <ul class="menu">
+        <li><a href="#home" data-pt="Início" data-en="Home">Início</a></li>
+        <li><a href="#plans" data-pt="Planos" data-en="Plans">Planos</a></li>
+        <li><a href="#contact" data-pt="Contato" data-en="Contact">Contato</a></li>
       </ul>
       <div class="flags">
         <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="setLanguage('pt')">
@@ -20,10 +20,10 @@
       </div>
     </nav>
   </header>  <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <h1 data-pt="Aulas de Guitarra Online" data-en="Online Guitar Lessons">Aulas de Guitarra Online</h1>
       <p data-pt="Aprenda no seu ritmo, de onde estiver." data-en="Learn at your own pace, from anywhere.">Aprenda no seu ritmo, de onde estiver.</p>
-    </section><section class="plans">
+    </section><section class="plans" id="plans">
   <div class="plan">
     <h2 data-pt="1 Aula Avulsa" data-en="1 Single Lesson">1 Aula Avulsa</h2>
     <p>R$ 100 / $20</p>
@@ -38,14 +38,14 @@
   </div>
 </section>
 
-  </main>  <footer>
+  </main>  <footer id="contact">
     <p>© 2025 GuitarClass Online - Todos os direitos reservados</p>
     <p>Email: contato@guitarclass.online | WhatsApp: +55 51 99999-9999</p>
   </footer><a href="https://wa.me/5551999999999" class="whatsapp-button" target="_blank">WhatsApp</a>
 
   <div id="promo-popup" class="popup">
     <div class="popup-content">
-      <span class="close" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
+      <span class="close" onclick="document.getElementById('promo-popup').style.display='none'">&times;</span>
       <h2 style="color:gold">🎉 50% de Desconto!</h2>
       <p data-pt="Apenas para os 10 primeiros alunos." data-en="Only for the first 10 students.">Apenas para os 10 primeiros alunos.</p>
     </div>
