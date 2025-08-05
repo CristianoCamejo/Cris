@@ -1,1 +1,218 @@
-index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GuitarClass.Online - Aulas de Guitarra / Guitar Lessons</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background: #2ecc71;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  header svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+  }
+  header h1 {
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 1.5px;
+  }
+  nav {
+    margin-left: auto;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #f39c12;
+  }
+  main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  section {
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    font-weight: 600;
+    color: #2ecc71;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  h2 svg {
+    fill: #2ecc71;
+    width: 28px;
+    height: 28px;
+  }
+  p.subtitle {
+    font-weight: 300;
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 0;
+  }
+  .pricing {
+    background: #333;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    color: #eee;
+    box-shadow: 0 6px 15px rgba(46, 204, 113, 0.35);
+  }
+  .pricing p {
+    font-size: 1.1rem;
+    margin: 0.6rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pricing p span {
+    font-weight: 600;
+    color: #f39c12;
+  }
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .contact-list li {
+    margin: 0.7rem 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .contact-list li svg {
+    fill: #2ecc71;
+    width: 20px;
+    height: 20px;
+  }
+  footer {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background: #111;
+    font-size: 0.9rem;
+    color: #666;
+    user-select: none;
+  }
+  /* Responsive */
+  @media (max-width: 480px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    nav {
+      margin-left: 0;
+    }
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.9rem;
+    }
+    main {
+      padding: 1rem 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" >
+    <path d="M50 2H14C9 2 6 7 6 12v40c0 5 3 10 8 10h36c5 0 8-5 8-10V12c0-5-3-10-8-10zM14 6h36c2.2 0 4 2.7 4 6v38c0 3.3-1.8 6-4 6H14c-2.2 0-4-2.7-4-6V12c0-3.3 1.8-6 4-6z"/>
+    <path d="M20 16h8v32h-8zM36 16h8v32h-8z"/>
+  </svg>
+  <h1>GuitarClass.Online</h1>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#valores">Valores</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <section id="inicio">
+    <h2>
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path d="M16 12h32v40H16z"/>
+        <path d="M32 52c6 0 10-7 10-14s-4-14-10-14-10 7-10 14 4 14 10 14z" fill="#2ecc71"/>
+      </svg>
+      Aulas de Guitarra Online / Guitar Lessons Online
+    </h2>
+    <p class="subtitle">
+      Do iniciante ao avançado / From Beginner to Advanced
+    </p>
+    <p class="subtitle">
+      Estude no seu ritmo, com foco nos seus objetivos musicais / Learn at your own pace
+    </p>
+  </section>
+
+  <section id="valores" class="pricing">
+    <h2>
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" stroke="#2ecc71" stroke-width="4" fill="none"/>
+        <path d="M22 30h20v4H22z" fill="#2ecc71"/>
+      </svg>
+      Valores / Pricing
+    </h2>
+    <p><span>1 hora:</span> R$120,00 / 1 hour: $25</p>
+    <p><span>4 horas:</span> R$360,00 / 4 hours: $75</p>
+  </section>
+
+  <section id="contato">
+    <h2>
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path d="M4 10v44l56-22L4 10z" fill="#2ecc71"/>
+        <path d="M8 16l48 20-48 20V16z" fill="#27ae60"/>
+      </svg>
+      Contato / Contact
+    </h2>
+    <ul class="contact-list">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 16.5a17.79 17.79 0 0 1-7 7 2 2 0 0 1-2.4-0.4l-3.3-3.3a2 2 0 0 1-0.5-2.1 13.05 13.05 0 0 0 5-5 2 2 0 0 1 2.1-0.5l3.3 3.3a2 2 0 0 1 0.4 2.4z"/></svg>
+        WhatsApp: +55 (51) 98961-0859
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18v-8l8 6 8-6v8H4z"/></svg>
+        Email: contato@guitarclass.online
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 4 7 4 7v10s3 4 8 4 8-4 8-4V7s-3-4-8-4zm0 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+        Instagram: @guitarclass.online
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4z" fill="none"/><path d="M18 8h-2V6h-4v2H6v8h12z"/></svg>
+        Site: <a href="https://guitarclass.online" target="_blank" rel="noopener noreferrer" style="color:#2ecc71; text-decoration:none;">guitarclass.online</a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  © 2025 GuitarClass.Online - Todos os direitos reservados / All rights reserved
+</footer>
+</body>
+</html>
