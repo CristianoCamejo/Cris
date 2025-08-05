@@ -1,59 +1,58 @@
-<!DOCTYPE html><html lang="pt">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Guitar Class Online</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <ul class="menu">
-        <li><a href="#home" data-pt="Início" data-en="Home">Início</a></li>
-        <li><a href="#plans" data-pt="Planos" data-en="Plans">Planos</a></li>
-        <li><a href="#contact" data-pt="Contato" data-en="Contact">Contato</a></li>
-      </ul>
-      <div class="flags">
-        <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="setLanguage('pt')">
-        <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="setLanguage('en')">
-      </div>
-    </nav>
-  </header>  <main>
-    <section class="hero" id="home">
-      <h1 data-pt="Aulas de Guitarra Online" data-en="Online Guitar Lessons">Aulas de Guitarra Online</h1>
-      <p data-pt="Aprenda no seu ritmo, de onde estiver." data-en="Learn at your own pace, from anywhere.">Aprenda no seu ritmo, de onde estiver.</p>
-    </section><section class="plans" id="plans">
-  <div class="plan">
-    <h2 data-pt="1 Aula Avulsa" data-en="1 Single Lesson">1 Aula Avulsa</h2>
-    <p>R$ 100 / $20</p>
-  </div>
-  <div class="plan">
-    <h2 data-pt="Pacote Mensal (4 aulas)" data-en="Monthly Package (4 lessons)">Pacote Mensal (4 aulas)</h2>
-    <p>R$ 350 / $75</p>
-  </div>
-  <div class="plan">
-    <h2 data-pt="Plano Personalizado" data-en="Custom Plan">Plano Personalizado</h2>
-    <p data-pt="Entre em contato para montar seu plano." data-en="Contact us to build your plan.">Entre em contato para montar seu plano.</p>
-  </div>
-</section>
-
-  </main>  <footer id="contact">
-    <p>© 2025 GuitarClass Online - Todos os direitos reservados</p>
-    <p>Email: contato@guitarclass.online | WhatsApp: +55 51 99999-9999</p>
-  </footer><a href="https://wa.me/5551999999999" class="whatsapp-button" target="_blank">WhatsApp</a>
-
-  <div id="promo-popup" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="document.getElementById('promo-popup').style.display='none'">&times;</span>
-      <h2 style="color:gold">🎉 50% de Desconto!</h2>
-      <p data-pt="Apenas para os 10 primeiros alunos." data-en="Only for the first 10 students.">Apenas para os 10 primeiros alunos.</p>
+    <h1 class="title">Guitar Class Online</h1>
+    <div class="language-switch">
+      <img src="https://flagcdn.com/br.svg" alt="Português" id="pt-btn" />
+      <img src="https://flagcdn.com/us.svg" alt="English" id="en-btn" />
     </div>
-  </div>  <script>
-    window.onload = () => {
-      setTimeout(() => {
-        document.getElementById('promo-popup').style.display = 'block';
-      }, 2000);
-    }
-  </script></body>
+    <nav id="menu">
+      <ul>
+        <li><a href="#plans">Planos</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h2 id="intro-title">Aulas de Guitarra Online</h2>
+    <p id="intro-text">Aprenda guitarra no seu ritmo, com aulas personalizadas e práticas ao vivo.</p>
+  </section>
+
+  <section id="plans" class="plans">
+    <h2 id="plans-title">Planos</h2>
+    <div class="plan-card">
+      <h3 id="plan1-title">1 Aula</h3>
+      <p id="plan1-price">R$ 100 / $20</p>
+    </div>
+    <div class="plan-card">
+      <h3 id="plan2-title">4 Aulas por mês</h3>
+      <p id="plan2-price">R$ 350 / $75</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 id="contact-title">Contato</h2>
+    <p>Email: contato@guitarclass.online</p>
+    <p>WhatsApp: <a href="https://wa.me/5551989610859" target="_blank">+55 51 98961-0859</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Guitar Class Online. Todos os direitos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/5551989610859" class="whatsapp-float" target="_blank">💬</a>
+
+  <div class="popup" id="discount-popup">
+    <p><strong>🔥 50% de desconto</strong> para os 10 primeiros alunos!</p>
+  </div>
+</body>
 </html>
