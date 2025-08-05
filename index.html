@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GuitarClass.Online</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
   <style>
@@ -16,6 +16,7 @@
     header {
       background-color: #27ae60;
       padding: 2rem 1rem;
+      position: relative;
     }
     header h1 {
       font-size: 2.5rem;
@@ -31,21 +32,27 @@
       text-decoration: none;
       font-size: 1.1rem;
     }
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .lang-switch img {
+      width: 30px;
+      height: 20px;
+      margin-left: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .lang-switch img:hover {
+      border-color: #fff;
+    }
     section {
       padding: 3rem 1rem;
     }
     h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      fill: currentColor;
     }
     .pricing {
       font-size: 1.2rem;
@@ -65,52 +72,68 @@
       font-size: 0.9rem;
       color: #999;
     }
+
+    /* Botão flutuante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+    .whatsapp-float a {
+      color: white;
+      display: block;
+      padding: 14px;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>🎸 GuitarClass.Online</h1>
+    <div class="lang-switch">
+      <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="setLanguage('pt')">
+      <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="setLanguage('en')">
+    </div>
     <nav>
-      <a href="#inicio">Início</a>
-      <a href="#valores">Valores</a>
-      <a href="#contato">Contato</a>
+      <a href="#inicio">Início / Home</a>
+      <a href="#valores">Valores / Pricing</a>
+      <a href="#contato">Contato / Contact</a>
     </nav>
   </header>
 
   <section id="inicio">
-    <h2>🎶 Aulas de Guitarra / Guitar Lessons</h2>
-    <p>🎸 Do iniciante ao avançado / From beginner to advanced</p>
-    <p>🎯 Estude no seu ritmo e estilo / Learn at your pace and style</p>
+    <h2 data-pt="Aulas de Guitarra" data-en="Guitar Lessons">Aulas de Guitarra</h2>
+    <p data-pt="Do iniciante ao avançado" data-en="From beginner to advanced">Do iniciante ao avançado</p>
+    <p data-pt="Estude no seu ritmo e estilo" data-en="Learn at your pace and style">Estude no seu ritmo e estilo</p>
   </section>
 
   <section id="valores">
-    <h2>
-      💰 Valores / Pricing
-    </h2>
+    <h2 data-pt="Valores" data-en="Pricing">Valores</h2>
     <div class="pricing">
-      <p>🎵 1 hora: R$120,00 / 1 hour: $25</p>
-      <p>🎵 4 horas: R$360,00 / 4 hours: $75</p>
+      <p data-pt="1 hora: R$120,00 / 4 horas: R$360,00" data-en="1 hour: $25 / 4 hours: $75">1 hora: R$120,00 / 4 horas: R$360,00</p>
     </div>
   </section>
 
   <section id="contato">
-    <h2>
-      📞 Contato / Contact
-    </h2>
+    <h2 data-pt="Contato" data-en="Contact">Contato</h2>
     <ul class="contact-list">
       <li>
-        <a href="https://wa.me/5551989610859" target="_blank" style="text-decoration: none; color: #2ecc71; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
-          <svg viewBox="0 0 24 24"><path d="M21 16.5a17.79 17.79 0 0 1-7 7 2 2 0 0 1-2.4-0.4l-3.3-3.3a2 2 0 0 1-0.5-2.1 13.05 13.05 0 0 0 5-5 2 2 0 0 1 2.1-0.5l3.3 3.3a2 2 0 0 1 0.4 2.4z"/></svg>
-          WhatsApp: +55 (51) 98961-0859
-        </a>
+        WhatsApp: +55 (51) 98961-0859
       </li>
       <li>
-        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18v-8l8 6 8-6v8H4z"/></svg>
         Email: contato@guitarclass.online
       </li>
       <li>
-        <svg viewBox="0 0 24 24"><path d="M12 3C7 3 4 7 4 7v10s3 4 8 4 8-4 8-4V7s-3-4-8-4zm0 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
         Instagram: @guitarclass.online
       </li>
     </ul>
@@ -119,6 +142,20 @@
   <footer>
     © 2025 GuitarClass.Online - Todos os direitos reservados / All rights reserved
   </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5551989610859" target="_blank">💬</a>
+  </div>
+
+  <!-- Script de tradução -->
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-pt]').forEach(el => {
+        el.innerText = lang === 'pt' ? el.getAttribute('data-pt') : el.getAttribute('data-en');
+      });
+    }
+  </script>
 
 </body>
 </html>
