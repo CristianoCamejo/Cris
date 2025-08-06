@@ -407,8 +407,10 @@
                 }
             });
 
-            // Atualiza o conteúdo do modal sem reabri-lo
+            // Atualiza o conteúdo do modal
             updateModalContent(lang);
+            // Reabre o modal após traduzir o conteúdo
+            showModal(); 
         }
 
         // Carrega o idioma padrão (português) e mostra o modal ao abrir a página
