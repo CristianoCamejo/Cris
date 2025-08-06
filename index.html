@@ -4,56 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aulas de Violão Online</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+
     <style>
-        /* Estilos básicos para a página */
+        /* Paleta de cores e estilo geral */
+        :root {
+            --primary-color: #4CAF50; /* Verde principal */
+            --secondary-color: #66BB6A; /* Verde mais claro */
+            --dark-color: #2e7d32; /* Verde escuro para botões/links */
+            --text-color: #333;
+            --background-color: #f0fdf4; /* Verde bem clarinho */
+            --card-background: #fff;
+        }
+
         body {
-            font-family: sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 960px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
+        /* Estilo do cabeçalho */
         header {
-            background-color: #333;
+            background-color: var(--primary-color);
             color: #fff;
-            padding: 1rem;
+            padding: 1.5rem 0;
             text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
         }
 
         nav a {
             color: #fff;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
+        nav a:hover {
+            color: #e0e0e0;
+        }
+
+        /* Seções e Cards */
         section {
-            padding: 60px 20px;
+            padding: 80px 0;
             text-align: center;
         }
 
-        h1, h2 {
-            color: #444;
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* Layout dos cursos com Flexbox */
+        .course-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .course-card {
+            background: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 450px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .course-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.5rem;
         }
 
         /* Estilos para o botão de idioma */
         .language-switcher {
             text-align: right;
             padding: 10px;
+            background-color: var(--primary-color);
         }
+
         .language-switcher button {
             background: none;
-            border: none;
+            border: 1px solid #fff;
             color: #fff;
             cursor: pointer;
             margin-left: 10px;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-switcher button:hover {
+            background-color: var(--dark-color);
         }
 
         /* Estilos do botão flutuante do WhatsApp */
@@ -111,7 +189,16 @@
     <section id="courses">
         <div class="container">
             <h2 data-lang-key="courses_title">Nossos Cursos</h2>
-            <p data-lang-key="courses_text">Oferecemos cursos para iniciantes, intermediários e avançados. Do básico ao fingerstyle.</p>
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3 data-lang-key="course_base_title">Essential Guitar Base</h3>
+                    <p data-lang-key="course_base_text">Aprenda os acordes, ritmos e a base fundamental para tocar suas músicas favoritas.</p>
+                </div>
+                <div class="course-card">
+                    <h3 data-lang-key="course_solo_title">Essential Guitar Solo</h3>
+                    <p data-lang-key="course_solo_text">Desenvolva sua técnica de solo, escala e improvisação. Perfeito para quem quer se destacar.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -146,7 +233,10 @@
                 'about_title': 'Bem-vindo(a)',
                 'about_text': 'Aprenda a tocar violão no seu próprio ritmo com aulas online e personalizadas.',
                 'courses_title': 'Nossos Cursos',
-                'courses_text': 'Oferecemos cursos para iniciantes, intermediários e avançados. Do básico ao fingerstyle.',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text': 'Aprenda os acordes, ritmos e a base fundamental para tocar suas músicas favoritas.',
+                'course_solo_title': 'Essential Guitar Solo',
+                'course_solo_text': 'Desenvolva sua técnica de solo, escala e improvisação. Perfeito para quem quer se destacar.',
                 'pricing_title': 'Preços',
                 'pricing_text': '1 aula avulsa por R$ 120,00.',
                 'pricing_promo': 'Pacote de 4 aulas, ganhe uma grátis!',
@@ -162,7 +252,10 @@
                 'about_title': 'Welcome',
                 'about_text': 'Learn to play the guitar at your own pace with personalized online classes.',
                 'courses_title': 'Our Courses',
-                'courses_text': 'We offer courses for beginners, intermediate, and advanced students. From basics to fingerstyle.',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text': 'Learn chords, rhythms, and the fundamental base to play your favorite songs.',
+                'course_solo_title': 'Essential Guitar Solo',
+                'course_solo_text': 'Develop your solo technique, scales, and improvisation. Perfect for those who want to stand out.',
                 'pricing_title': 'Pricing',
                 'pricing_text': '1 single class for R$ 120,00.',
                 'pricing_promo': 'Buy 4 classes, get one free!',
@@ -178,7 +271,10 @@
                 'about_title': 'Bienvenido(a)',
                 'about_text': 'Aprende a tocar la guitarra a tu propio ritmo con clases online y personalizadas.',
                 'courses_title': 'Nuestros Cursos',
-                'courses_text': 'Ofrecemos cursos para principiantes, intermedios y avanzados. Desde lo básico hasta el fingerstyle.',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text': 'Aprende acordes, ritmos y la base fundamental para tocar tus canciones favoritas.',
+                'course_solo_title': 'Essential Guitar Solo',
+                'course_solo_text': 'Desarrolla tu técnica de solo, escalas e improvisación. Perfecto para quienes quieren destacarse.',
                 'pricing_title': 'Precios',
                 'pricing_text': '1 clase individual por R$ 120,00.',
                 'pricing_promo': 'Paquete de 4 clases, ¡recibe una gratis!',
