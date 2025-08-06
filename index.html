@@ -1,128 +1,434 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Guitar Class</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #222, #111);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .popup {
-      background-color: #000;
-      border: 2px solid green;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 350px;
-      text-align: center;
-      position: relative;
-    }
-    .popup h1 {
-      color: green;
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    .popup p {
-      margin: 5px 0;
-      font-size: 16px;
-    }
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      color: red;
-      font-size: 20px;
-      cursor: pointer;
-    }
-    .flag-buttons {
-      margin-top: 10px;
-    }
-    .flag-buttons button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      margin: 0 5px;
-    }
-    .flag-buttons img {
-      width: 24px;
-      height: auto;
-    }
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-    .whatsapp-button svg {
-      width: 35px;
-      height: 35px;
-      fill: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Class Online</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+
+    <style>
+        /* Paleta de cores e estilo geral */
+        :root {
+            --primary-color: #4CAF50; /* Verde principal */
+            --secondary-color: #66BB6A; /* Verde mais claro */
+            --dark-color: #2e7d32; /* Verde escuro para botões/links */
+            --text-color: #333;
+            --background-color: #f0fdf4; /* Verde bem clarinho */
+            --card-background: #fff;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            background-color: var(--card-background);
+            color: var(--text-color);
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Estilo do logotipo */
+        .logo {
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e0e0e0;
+        }
+
+        /* Estilos das Seções */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background-color: #fff;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* Layout dos cursos com Flexbox */
+        .course-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .course-card {
+            background: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 450px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .course-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Estilos para o botão de idioma */
+        .language-switcher {
+            text-align: right;
+            padding: 10px;
+            background-color: var(--primary-color);
+        }
+
+        .language-switcher button {
+            background: none;
+            border: 1px solid #fff;
+            color: #fff;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 0.9rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-switcher button:hover {
+            background-color: var(--dark-color);
+        }
+
+        /* Estilos do botão flutuante do WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilos do Pop-up */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            animation: fadeIn 0.5s;
+        }
+
+        .modal-content {
+            background-color: var(--card-background);
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .promo-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .promo-text {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="popup" id="popup">
-  <span class="close-btn" onclick="togglePopup(false)">×</span>
-  <h1 id="title">Aulas de Guitarra</h1>
-  <p id="price">1 aula R$120 | 4 aulas R$360</p>
-  <p id="promo">Promoções para alunos fixos</p>
-  <div class="flag-buttons">
-    <button onclick="setLanguage('pt')"><img src="https://flagcdn.com/w40/br.png" alt="Português"></button>
-    <button onclick="setLanguage('en')"><img src="https://flagcdn.com/w40/us.png" alt="English"></button>
-  </div>
-</div>
+    <div class="language-switcher">
+        <button onclick="changeLanguage('pt')">🇧🇷</button>
+        <button onclick="changeLanguage('en')">🇺🇸</button>
+        <button onclick="changeLanguage('es')">🇪🇸</button>
+    </div>
 
-<a href="https://wa.me/5551989610859" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <path d="M16 .063C7.177.063 0 7.238 0 16.063c0 2.828.738 5.56 2.14 7.97L.115 31.748l8.02-2.06A15.862 15.862 0 0016 32c8.822 0 16-7.177 16-15.938C32 7.238 24.822.063 16 .063zm0 29.062a13.061 13.061 0 01-6.646-1.804l-.475-.283-4.758 1.22 1.26-4.632-.309-.478a12.986 12.986 0 01-2.032-6.979c0-7.198 5.865-13.063 13.063-13.063 7.197 0 13.062 5.865 13.062 13.063 0 7.197-5.865 13.062-13.062 13.062zm7.18-9.936c-.393-.197-2.334-1.156-2.695-1.288-.36-.132-.623-.197-.887.197-.262.394-1.02 1.287-1.25 1.55-.23.262-.459.295-.852.098-.393-.197-1.656-.611-3.156-1.946-1.167-1.04-1.956-2.326-2.187-2.72-.23-.394-.025-.607.172-.804.176-.175.394-.459.59-.689.197-.23.262-.394.393-.656.131-.263.066-.492-.033-.689-.099-.197-.887-2.14-1.216-2.93-.32-.788-.646-.682-.886-.694l-.757-.01c-.262 0-.689.098-1.05.492-.36.394-1.377 1.343-1.377 3.277s1.41 3.794 1.605 4.054c.197.262 2.77 4.229 6.716 5.927.939.404 1.67.645 2.24.825.94.299 1.796.257 2.47.156.754-.112 2.334-.954 2.667-1.875.328-.918.328-1.705.23-1.875-.098-.172-.36-.279-.754-.459z"/>
-  </svg>
-</a>
+    <header>
+        <div class="container">
+            <img src="1754445533757 (1).jpg" alt="Logotipo Guitar Class Online" class="logo">
+            <nav>
+                <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
+                <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
+                <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Preços</a>
+                <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
+            </nav>
+        </div>
+    </header>
 
-<script>
-  function togglePopup(show) {
-    const popup = document.getElementById('popup');
-    popup.style.display = show ? 'block' : 'none';
-  }
+    <section id="about">
+        <div class="container">
+            <h2 data-lang-key="about_title">Bem-vindo(a)</h2>
+            <p data-lang-key="about_text">Aprenda a tocar violão no seu próprio ritmo com aulas online e personalizadas.</p>
+        </div>
+    </section>
 
-  function setLanguage(lang) {
-    const title = document.getElementById('title');
-    const price = document.getElementById('price');
-    const promo = document.getElementById('promo');
+    <section id="courses">
+        <div class="container">
+            <h2 data-lang-key="courses_title">Nossos Cursos</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3 data-lang-key="course_base_title">Essential Guitar Base</h3>
+                    <p data-lang-key="course_base_text">Aprenda os acordes, ritmos e a base fundamental para tocar suas músicas favoritas.</p>
+                </div>
+                <div class="course-card">
+                    <h3 data-lang-key="course_solo_title">Essential Guitar Solo</h3>
+                    <p data-lang-key="course_solo_text">Desenvolva sua técnica de solo, escala e improvisação. Perfeito para quem quer se destacar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    if (lang === 'en') {
-      title.textContent = 'Guitar Lessons';
-      price.textContent = '1 class $25 | 4 classes $75';
-      promo.textContent = 'Discounts for regular students';
-    } else {
-      title.textContent = 'Aulas de Guitarra';
-      price.textContent = '1 aula R$120 | 4 aulas R$360';
-      promo.textContent = 'Promoções para alunos fixos';
-    }
+    <section id="pricing">
+        <div class="container">
+            <h2 data-lang-key="pricing_title">Preços</h2>
+            <p data-lang-key="pricing_text">1 aula avulsa por R$ 120,00.</p>
+            <p data-lang-key="pricing_promo">Pacote de 4 aulas, ganha 1 grátis!</p>
+        </div>
+    </section>
 
-    togglePopup(true); // reabre o popup automaticamente
-  }
+    <section id="contact">
+        <div class="container">
+            <h2 data-lang-key="contact_title">Entre em Contato</h2>
+            <p data-lang-key="contact_text">Mande uma mensagem e comece a sua jornada musical!</p>
+        </div>
+    </section>
 
-  // Opcional: abrir popup automaticamente ao carregar
-  window.onload = () => togglePopup(true);
-</script>
+    <div id="promoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 class="promo-title" id="promo-title" data-lang-key="promo_title">Atenção!</h2>
+            <p class="promo-text" id="promo-text" data-lang-key="promo_text">50% de desconto para os 50 primeiros alunos!</p>
+        </div>
+    </div>
 
+    <a href="https://wa.me/5551989610859" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="#FFF">
+            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.95 18.018c-3.141-1.724-4.876-4.524-4.876-7.398 0-4.004 3.197-7.25 7.142-7.25h.079c4.015 0 7.25 3.235 7.25 7.25 0 3.993-3.088 7.234-7.228 7.234-1.228 0-2.428-.313-3.479-.909l-3.666 1.018 1.026-3.704zm2.148-1.579c.642.336 1.341.51 2.062.51h.005c3.088 0 5.602-2.483 5.602-5.556 0-3.073-2.514-5.556-5.602-5.556-3.088 0-5.602 2.483-5.602 5.556 0 1.948 1.002 3.864 2.685 4.966l-.587 2.115 2.114-.588z"/>
+            <path d="M10.875 14.509l-.497-.333c-1.464-1.024-1.611-2.924-.343-4.195l.497-.333c.48-.32.964-.488 1.442-.488.583 0 1.164.198 1.637.594.498.411.758 1.018.761 1.634.002.585-.236 1.157-.707 1.578l-.333.351-.318-.088c-.287-.079-.588.082-.667.37l-.234.848c-.085.312.083.626.395.711.205.056.415.011.609-.136l1.246-.993c.53-.424.81-1.07.81-1.748 0-.962-.573-1.802-1.488-2.399-.915-.597-2.061-.884-3.212-.767-1.151.117-2.261.644-3.013 1.483-1.077 1.203-1.26 3.197-.488 4.707l.214.39.39-.214c.29-.16.657-.042.817.248l.214.39z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Dicionário de traduções
+        const translations = {
+            'pt': {
+                'site-title': 'Aulas de Violão Online',
+                'nav_about': 'Sobre',
+                'nav_courses': 'Cursos',
+                'nav_pricing': 'Preços',
+                'nav_contact': 'Contato',
+                'about_title': 'Bem-vindo(a)',
+                'about_text': 'Aprenda a tocar violão no seu próprio ritmo com aulas online e personalizadas.',
+                'courses_title': 'Nossos Cursos',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text': 'Aprenda os acordes, ritmos e a base fundamental para tocar suas músicas favoritas.',
+                'course_solo_title': 'Essential Guitar Solo',
+                'course_solo_text': 'Desenvolva sua técnica de solo, escala e improvisação. Perfeito para quem quer se destacar.',
+                'pricing_title': 'Preços',
+                'pricing_text': '1 aula avulsa por R$ 120,00.',
+                'pricing_promo': 'Pacote de 4 aulas, ganha 1 grátis!',
+                'contact_title': 'Entre em Contato',
+                'contact_text': 'Mande uma mensagem e comece a sua jornada musical!',
+                'promo_title': 'Atenção!',
+                'promo_text': '50% de desconto para os 50 primeiros alunos!'
+            },
+            'en': {
+                'site-title': 'Online Guitar Classes',
+                'nav_about': 'About',
+                'nav_courses': 'Courses',
+                'nav_pricing': 'Pricing',
+                'nav_contact': 'Contact',
+                'about_title': 'Welcome',
+                'about_text': 'Learn to play the guitar at your own pace with personalized online classes.',
+                'courses_title': 'Our Courses',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text': 'Learn chords, rhythms, and the fundamental base to play your favorite songs.',
+                'course_solo_title': 'Essential Guitar Solo',
+                'course_solo_text': 'Develop your solo technique, scales, and improvisation. Perfect for those who want to stand out.',
+                'pricing_title': 'Pricing',
+                'pricing_text': '1 single class for $ 25.00.',
+                'pricing_promo': 'Buy 4 classes, get 1 free!',
+                'contact_title': 'Contact Us',
+                'contact_text': 'Send a message and start your musical journey!',
+                'promo_title': 'Attention!',
+                'promo_text': '50% discount for the first 50 students!'
+            },
+            'es': {
+                'site-title': 'Clases de Guitarra Online',
+                'nav_about': 'Acerca de',
+                'nav_courses': 'Cursos',
+                'nav_pricing': 'Precios',
+                'nav_contact': 'Contacto',
+                'about_title': 'Bienvenido(a)',
+                'about_text': 'Aprende a tocar la guitarra a tu propio ritmo con clases online y personalizadas.',
+                'courses_title': 'Nuestros Cursos',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text': 'Aprende acordes, ritmos y la base fundamental para tocar tus canciones favoritas.',
+                'course_solo_title': 'Essential Guitar Solo',
+                'course_solo_text': 'Desarrolla tu técnica de solo, escalas e improvisación. Perfecto para quienes quieren destacarse.',
+                'pricing_title': 'Precios',
+                'pricing_text': '1 clase individual por € 23,00.',
+                'pricing_promo': 'Paquete de 4 clases, ¡recibe 1 gratis!',
+                'contact_title': 'Contáctenos',
+                'contact_text': '¡Envía un mensaje y comienza tu viaje musical!',
+                'promo_title': '¡Atención!',
+                'promo_text': '¡50% de descuento para los primeros 50 estudiantes!'
+            }
+        };
+
+        // Função para atualizar o conteúdo do modal com o idioma correto
+        function updateModalContent(lang) {
+            const promoTitleElement = document.getElementById('promo-title');
+            const promoTextElement = document.getElementById('promo-text');
+            promoTitleElement.textContent = translations[lang]['promo_title'];
+            promoTextElement.textContent = translations[lang]['promo_text'];
+        }
+
+        // Função para mostrar o modal
+        function showModal() {
+            const modal = document.getElementById('promoModal');
+            modal.style.display = 'block';
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            const modal = document.getElementById('promoModal');
+            modal.style.display = 'none';
+        }
+
+        // Função para mudar o idioma
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            
+            // Traduz os links de navegação
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const key = link.getAttribute('data-lang-key');
+                link.textContent = translations[lang][key];
+            });
+
+            // Traduz o conteúdo das seções
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                if (element.tagName !== 'A') {
+                    const key = element.getAttribute('data-lang-key');
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Atualiza o conteúdo do modal
+            updateModalContent(lang);
+            // Reabre o modal após traduzir o conteúdo
+            showModal(); 
+        }
+
+        // Carrega o idioma padrão (português) e mostra o modal ao abrir a página
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage('pt');
+            showModal();
+        });
+
+        // Fecha o modal se o usuário clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('promoModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
