@@ -241,7 +241,7 @@
 
     <header>
         <div class="container">
-            <img src="1754445533757 (1).jpg" alt="Logotipo Guitar Class Online" class="logo">
+            <img src="guitarclass-logo.png" alt="Logotipo Guitar Class Online" class="logo">
             <nav>
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
@@ -369,15 +369,17 @@
             }
         };
 
+        // Função para atualizar o conteúdo do modal com o idioma correto
+        function updateModalContent(lang) {
+            const promoTitleElement = document.getElementById('promo-title');
+            const promoTextElement = document.getElementById('promo-text');
+            promoTitleElement.textContent = translations[lang]['promo_title'];
+            promoTextElement.textContent = translations[lang]['promo_text'];
+        }
+
         // Função para mostrar o modal
         function showModal() {
             const modal = document.getElementById('promoModal');
-            const promoTitleElement = document.getElementById('promo-title');
-            const promoTextElement = document.getElementById('promo-text');
-            const currentLang = document.documentElement.lang;
-
-            promoTitleElement.textContent = translations[currentLang]['promo_title'];
-            promoTextElement.textContent = translations[currentLang]['promo_text'];
             modal.style.display = 'block';
         }
 
@@ -405,8 +407,8 @@
                 }
             });
 
-            // Traduz o conteúdo do modal
-            // showModal(); // Comentado para o modal não reabrir a cada troca de idioma
+            // Atualiza o conteúdo do modal sem reabri-lo
+            updateModalContent(lang);
         }
 
         // Carrega o idioma padrão (português) e mostra o modal ao abrir a página
