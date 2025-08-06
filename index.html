@@ -95,6 +95,7 @@
             <nav>
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
+                <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Preços</a>
                 <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
             </nav>
         </div>
@@ -111,6 +112,14 @@
         <div class="container">
             <h2 data-lang-key="courses_title">Nossos Cursos</h2>
             <p data-lang-key="courses_text">Oferecemos cursos para iniciantes, intermediários e avançados. Do básico ao fingerstyle.</p>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2 data-lang-key="pricing_title">Preços</h2>
+            <p data-lang-key="pricing_text">1 aula avulsa por R$ 120,00.</p>
+            <p data-lang-key="pricing_promo">Pacote de 4 aulas, ganhe uma grátis!</p>
         </div>
     </section>
 
@@ -132,11 +141,15 @@
                 'site-title': 'Aulas de Violão Online',
                 'nav_about': 'Sobre',
                 'nav_courses': 'Cursos',
+                'nav_pricing': 'Preços',
                 'nav_contact': 'Contato',
                 'about_title': 'Bem-vindo(a)',
                 'about_text': 'Aprenda a tocar violão no seu próprio ritmo com aulas online e personalizadas.',
                 'courses_title': 'Nossos Cursos',
                 'courses_text': 'Oferecemos cursos para iniciantes, intermediários e avançados. Do básico ao fingerstyle.',
+                'pricing_title': 'Preços',
+                'pricing_text': '1 aula avulsa por R$ 120,00.',
+                'pricing_promo': 'Pacote de 4 aulas, ganhe uma grátis!',
                 'contact_title': 'Entre em Contato',
                 'contact_text': 'Mande uma mensagem e comece a sua jornada musical!'
             },
@@ -144,11 +157,15 @@
                 'site-title': 'Online Guitar Classes',
                 'nav_about': 'About',
                 'nav_courses': 'Courses',
+                'nav_pricing': 'Pricing',
                 'nav_contact': 'Contact',
                 'about_title': 'Welcome',
                 'about_text': 'Learn to play the guitar at your own pace with personalized online classes.',
                 'courses_title': 'Our Courses',
                 'courses_text': 'We offer courses for beginners, intermediate, and advanced students. From basics to fingerstyle.',
+                'pricing_title': 'Pricing',
+                'pricing_text': '1 single class for R$ 120,00.',
+                'pricing_promo': 'Buy 4 classes, get one free!',
                 'contact_title': 'Contact Us',
                 'contact_text': 'Send a message and start your musical journey!'
             },
@@ -156,11 +173,15 @@
                 'site-title': 'Clases de Guitarra Online',
                 'nav_about': 'Acerca de',
                 'nav_courses': 'Cursos',
+                'nav_pricing': 'Precios',
                 'nav_contact': 'Contacto',
                 'about_title': 'Bienvenido(a)',
                 'about_text': 'Aprende a tocar la guitarra a tu propio ritmo con clases online y personalizadas.',
                 'courses_title': 'Nuestros Cursos',
                 'courses_text': 'Ofrecemos cursos para principiantes, intermedios y avanzados. Desde lo básico hasta el fingerstyle.',
+                'pricing_title': 'Precios',
+                'pricing_text': '1 clase individual por R$ 120,00.',
+                'pricing_promo': 'Paquete de 4 clases, ¡recibe una gratis!',
                 'contact_title': 'Contáctenos',
                 'contact_text': '¡Envía un mensaje y comienza tu viaje musical!'
             }
@@ -168,7 +189,7 @@
 
         // Função para mudar o idioma
         function changeLanguage(lang) {
-            document.documentElement.lang = lang; // Altera a tag <html>
+            document.documentElement.lang = lang;
             
             // Traduz o título do site
             document.getElementById('site-title').textContent = translations[lang]['site-title'];
@@ -181,7 +202,7 @@
 
             // Traduz o conteúdo das seções
             document.querySelectorAll('[data-lang-key]').forEach(element => {
-                if (element.tagName !== 'A') { // Ignora links de navegação já traduzidos
+                if (element.tagName !== 'A') {
                     const key = element.getAttribute('data-lang-key');
                     element.textContent = translations[lang][key];
                 }
