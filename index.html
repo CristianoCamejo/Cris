@@ -42,9 +42,12 @@
             text-align: center;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
+        /* Estilo do logotipo */
+        .logo {
+            max-width: 250px; /* Ajuste o tamanho máximo do logo */
+            height: auto;
+            display: block; /* Para centralizar a imagem */
+            margin: 0 auto 20px auto; /* Adiciona margem abaixo do logo */
         }
 
         nav a {
@@ -227,7 +230,7 @@
 
     <header>
         <div class="container">
-            <h1 id="site-title">Aulas de Violão Online</h1>
+            <img src="guitarclass-logo.png" alt="Logotipo Guitarclass Online" class="logo">
             <nav>
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
@@ -377,8 +380,8 @@
         function changeLanguage(lang) {
             document.documentElement.lang = lang;
             
-            // Traduz o título do site
-            document.getElementById('site-title').textContent = translations[lang]['site-title'];
+            // Não traduz o título do site (agora é um logo)
+            // document.getElementById('site-title').textContent = translations[lang]['site-title'];
 
             // Traduz os links de navegação
             document.querySelectorAll('.nav-link').forEach(link => {
@@ -395,7 +398,7 @@
             });
 
             // Traduz o conteúdo do modal
-            showModal();
+            // showModal(); // Comentado para o modal não reabrir a cada troca de idioma
         }
 
         // Carrega o idioma padrão (português) e mostra o modal ao abrir a página
