@@ -1,263 +1,197 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Guitar Class Online</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #222;
-    }
-    header {
-      background-color: #005c2e;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(to right, #007f42, #004d26);
-      color: white;
-      animation: fadeIn 2s ease-in-out;
-    }
-    .plans {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 3rem 1rem;
-      flex-wrap: wrap;
-    }
-    .plan {
-      background: white;
-      border: 2px solid #007f42;
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
-      width: 250px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .plan:hover {
-      transform: scale(1.05);
-    }
-    .plan h3 {
-      margin-bottom: 1rem;
-      color: #007f42;
-    }
-    .plan p {
-      font-size: 1.2rem;
-    }
-    footer {
-      background-color: #00331a;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-    }
-    .flags {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
-    }
-    .flags img {
-      width: 30px;
-      margin-left: 10px;
-      cursor: pointer;
-      border: 2px solid transparent;
-    }
-    .flags img.active {
-      border-color: white;
-      border-radius: 50%;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      text-align: center;
-      font-size: 30px;
-      z-index: 100;
-      line-height: 60px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      text-decoration: none;
-    }
-    .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 200;
-    }
-    .popup-content {
-      background: gold;
-      color: #222;
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
-      max-width: 300px;
-      position: relative;
-      animation: zoomIn 0.5s ease;
-    }
-    .popup-content button,
-    .popup-content a {
-      margin-top: 1rem;
-      background: #007f42;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .popup-content .close {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.8rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas de Violão Online</title>
+    <style>
+        /* Estilos básicos para a página */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    @keyframes zoomIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-  </style>
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #444;
+        }
+
+        /* Estilos para o botão de idioma */
+        .language-switcher {
+            text-align: right;
+            padding: 10px;
+        }
+        .language-switcher button {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 1rem;
+        }
+
+        /* Estilos do botão flutuante do WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Guitar Class Online</h1>
-    <nav id="menu">
-      <a href="#">Início</a>
-      <a href="#planos">Planos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <div class="flags">
-      <img src="https://flagcdn.com/br.svg" id="br" class="active" alt="Português">
-      <img src="https://flagcdn.com/us.svg" id="en" alt="English">
+
+    <div class="language-switcher">
+        <button onclick="changeLanguage('pt')">PT</button>
+        <button onclick="changeLanguage('en')">EN</button>
+        <button onclick="changeLanguage('es')">ES</button>
     </div>
-  </header>
 
-  <section class="hero">
-    <h2 id="headline">Aprenda guitarra online com um professor experiente</h2>
-    <p id="subheadline">Aulas individuais, práticas e adaptadas ao seu estilo</p>
-  </section>
+    <header>
+        <div class="container">
+            <h1 id="site-title">Aulas de Violão Online</h1>
+            <nav>
+                <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
+                <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
+                <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
+            </nav>
+        </div>
+    </header>
 
-  <section class="plans" id="planos">
-    <div class="plan">
-      <h3 id="plan1-title">1 aula individual</h3>
-      <p id="plan1-price">R$ 120</p>
-    </div>
-    <div class="plan">
-      <h3 id="plan2-title">Pacote com 4 aulas</h3>
-      <p id="plan2-price">R$ 360</p>
-    </div>
-  </section>
+    <section id="about">
+        <div class="container">
+            <h2 data-lang-key="about_title">Bem-vindo(a)</h2>
+            <p data-lang-key="about_text">Aprenda a tocar violão no seu próprio ritmo com aulas online e personalizadas.</p>
+        </div>
+    </section>
 
-  <footer id="contato">
-    <p>Contato: WhatsApp +55 51 98961-0859</p>
-    <p>Todos os direitos reservados - Guitar Class Online</p>
-  </footer>
+    <section id="courses">
+        <div class="container">
+            <h2 data-lang-key="courses_title">Nossos Cursos</h2>
+            <p data-lang-key="courses_text">Oferecemos cursos para iniciantes, intermediários e avançados. Do básico ao fingerstyle.</p>
+        </div>
+    </section>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/5551989610859" class="whatsapp-float" target="_blank">📞</a>
+    <section id="contact">
+        <div class="container">
+            <h2 data-lang-key="contact_title">Entre em Contato</h2>
+            <p data-lang-key="contact_text">Mande uma mensagem e comece a sua jornada musical!</p>
+        </div>
+    </section>
 
-  <!-- Popup -->
-  <div class="popup" id="promoPopup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup()">×</span>
-      <h3>🎸 50% de desconto!</h3>
-      <p>Para os 10 primeiros alunos!</p>
-      <a href="https://wa.me/5551989610859" target="_blank">Aproveitar agora</a>
-    </div>
-  </div>
+    <a href="https://wa.me/5551989610859" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        &#x2709;
+    </a>
 
-  <script>
-    const translations = {
-      pt: {
-        headline: "Aprenda guitarra online com um professor experiente",
-        subheadline: "Aulas individuais, práticas e adaptadas ao seu estilo",
-        plan1Title: "1 aula individual",
-        plan1Price: "R$ 120",
-        plan2Title: "Pacote com 4 aulas",
-        plan2Price: "R$ 360",
-        menu: ["Início", "Planos", "Contato"]
-      },
-      en: {
-        headline: "Learn guitar online with an experienced teacher",
-        subheadline: "Individual lessons, practical and tailored to your style",
-        plan1Title: "1 individual lesson",
-        plan1Price: "$25",
-        plan2Title: "4-lesson package",
-        plan2Price: "$75",
-        menu: ["Home", "Plans", "Contact"]
-      }
-    };
+    <script>
+        // Dicionário de traduções
+        const translations = {
+            'pt': {
+                'site-title': 'Aulas de Violão Online',
+                'nav_about': 'Sobre',
+                'nav_courses': 'Cursos',
+                'nav_contact': 'Contato',
+                'about_title': 'Bem-vindo(a)',
+                'about_text': 'Aprenda a tocar violão no seu próprio ritmo com aulas online e personalizadas.',
+                'courses_title': 'Nossos Cursos',
+                'courses_text': 'Oferecemos cursos para iniciantes, intermediários e avançados. Do básico ao fingerstyle.',
+                'contact_title': 'Entre em Contato',
+                'contact_text': 'Mande uma mensagem e comece a sua jornada musical!'
+            },
+            'en': {
+                'site-title': 'Online Guitar Classes',
+                'nav_about': 'About',
+                'nav_courses': 'Courses',
+                'nav_contact': 'Contact',
+                'about_title': 'Welcome',
+                'about_text': 'Learn to play the guitar at your own pace with personalized online classes.',
+                'courses_title': 'Our Courses',
+                'courses_text': 'We offer courses for beginners, intermediate, and advanced students. From basics to fingerstyle.',
+                'contact_title': 'Contact Us',
+                'contact_text': 'Send a message and start your musical journey!'
+            },
+            'es': {
+                'site-title': 'Clases de Guitarra Online',
+                'nav_about': 'Acerca de',
+                'nav_courses': 'Cursos',
+                'nav_contact': 'Contacto',
+                'about_title': 'Bienvenido(a)',
+                'about_text': 'Aprende a tocar la guitarra a tu propio ritmo con clases online y personalizadas.',
+                'courses_title': 'Nuestros Cursos',
+                'courses_text': 'Ofrecemos cursos para principiantes, intermedios y avanzados. Desde lo básico hasta el fingerstyle.',
+                'contact_title': 'Contáctenos',
+                'contact_text': '¡Envía un mensaje y comienza tu viaje musical!'
+            }
+        };
 
-    const flags = document.querySelectorAll(".flags img");
-    flags.forEach(flag => {
-      flag.addEventListener("click", () => {
-        const lang = flag.id;
-        flags.forEach(f => f.classList.remove("active"));
-        flag.classList.add("active");
-        updateLanguage(lang);
-      });
-    });
+        // Função para mudar o idioma
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang; // Altera a tag <html>
+            
+            // Traduz o título do site
+            document.getElementById('site-title').textContent = translations[lang]['site-title'];
 
-    function updateLanguage(lang) {
-      const t = translations[lang];
-      document.getElementById("headline").textContent = t.headline;
-      document.getElementById("subheadline").textContent = t.subheadline;
-      document.getElementById("plan1-title").textContent = t.plan1Title;
-      document.getElementById("plan1-price").textContent = t.plan1Price;
-      document.getElementById("plan2-title").textContent = t.plan2Title;
-      document.getElementById("plan2-price").textContent = t.plan2Price;
+            // Traduz os links de navegação
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const key = link.getAttribute('data-lang-key');
+                link.textContent = translations[lang][key];
+            });
 
-      const menuLinks = document.querySelectorAll("#menu a");
-      menuLinks.forEach((link, i) => {
-        link.textContent = t.menu[i];
-      });
-    }
+            // Traduz o conteúdo das seções
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                if (element.tagName !== 'A') { // Ignora links de navegação já traduzidos
+                    const key = element.getAttribute('data-lang-key');
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
 
-    function closePopup() {
-      document.getElementById("promoPopup").style.display = "none";
-    }
-
-    window.onload = function () {
-      setTimeout(() => {
-        document.getElementById("promoPopup").style.display = "flex";
-      }, 2000);
-    };
-  </script>
+        // Carrega o idioma padrão (português) ao abrir a página
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage('pt');
+        });
+    </script>
 </body>
 </html>
