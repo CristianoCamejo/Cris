@@ -9,13 +9,13 @@
     <link rel="shortcut icon" href="favicon.png" type="image/png">
 
     <style>
-        /* Paleta de cores e estilo geral (AGORA AZUL E PRETO) */
+        /* Paleta de cores e estilo geral */
         :root {
-            --primary-color: #007BFF; /* Azul principal */
-            --secondary-color: #1E90FF; /* Azul mais claro */
-            --dark-color: #212529; /* Preto para texto e detalhes */
-            --text-color: #343a40;
-            --background-color: #f8f9fa; /* Cinza bem claro */
+            --primary-color: #4CAF50; /* Verde principal */
+            --secondary-color: #66BB6A; /* Verde mais claro */
+            --dark-color: #2e7d32; /* Verde escuro para botões/links */
+            --text-color: #333;
+            --background-color: #f0fdf4; /* Verde bem clarinho */
             --card-background: #fff;
         }
 
@@ -145,7 +145,7 @@
         }
 
         .language-switcher button:hover {
-            background-color: #0056b3;
+            background-color: var(--dark-color);
         }
 
         /* Estilos do botão flutuante do WhatsApp */
@@ -153,7 +153,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #25d366; /* Mantive o verde do WhatsApp */
+            background-color: #25d366;
             color: #fff;
             border-radius: 50%;
             width: 60px;
@@ -404,6 +404,9 @@
                     element.textContent = translations[lang][key];
                 }
             });
+
+            // Traduz o conteúdo do modal
+            // showModal(); // Comentado para o modal não reabrir a cada troca de idioma
         }
 
         // Carrega o idioma padrão (português) e mostra o modal ao abrir a página
