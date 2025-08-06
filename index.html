@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aulas de Violão Online</title>
+    <title>Guitar Class Online</title>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
@@ -36,18 +36,25 @@
 
         /* Estilo do cabeçalho */
         header {
-            background-color: var(--primary-color);
-            color: #fff;
+            background-color: var(--card-background);
+            color: var(--text-color);
             padding: 1.5rem 0;
             text-align: center;
+            border-bottom: 1px solid #eee;
         }
 
         /* Estilo do logotipo */
         .logo {
-            max-width: 250px; /* Ajuste o tamanho máximo do logo */
+            max-width: 250px;
             height: auto;
-            display: block; /* Para centralizar a imagem */
-            margin: 0 auto 20px auto; /* Adiciona margem abaixo do logo */
+            display: block;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 0.5rem 0;
+            text-align: center;
         }
 
         nav a {
@@ -62,14 +69,18 @@
             color: #e0e0e0;
         }
 
-        /* Seções e Cards */
+        /* Estilos das Seções */
         section {
             padding: 80px 0;
             text-align: center;
         }
 
+        section:nth-child(even) {
+            background-color: #fff;
+        }
+
         section h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 20px;
             color: var(--dark-color);
             position: relative;
@@ -163,7 +174,7 @@
 
         /* Estilos do Pop-up */
         .modal {
-            display: none; /* Esconde o pop-up por padrão */
+            display: none;
             position: fixed;
             z-index: 1;
             left: 0;
@@ -230,7 +241,7 @@
 
     <header>
         <div class="container">
-            <img src="guitarclass-logo.png" alt="Logotipo Guitarclass Online" class="logo">
+            <img src="guitarclass-logo.png" alt="Logotipo Guitar Class Online" class="logo">
             <nav>
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
@@ -380,9 +391,6 @@
         function changeLanguage(lang) {
             document.documentElement.lang = lang;
             
-            // Não traduz o título do site (agora é um logo)
-            // document.getElementById('site-title').textContent = translations[lang]['site-title'];
-
             // Traduz os links de navegação
             document.querySelectorAll('.nav-link').forEach(link => {
                 const key = link.getAttribute('data-lang-key');
