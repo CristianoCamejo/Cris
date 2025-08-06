@@ -157,6 +157,64 @@
         .whatsapp-button:hover {
             transform: scale(1.1);
         }
+
+        /* Estilos do Pop-up */
+        .modal {
+            display: none; /* Esconde o pop-up por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            animation: fadeIn 0.5s;
+        }
+
+        .modal-content {
+            background-color: var(--card-background);
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .promo-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .promo-text {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -217,6 +275,14 @@
         </div>
     </section>
 
+    <div id="promoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 class="promo-title" id="promo-title" data-lang-key="promo_title">Atenção!</h2>
+            <p class="promo-text" id="promo-text" data-lang-key="promo_text">50% de desconto para os 50 primeiros alunos!</p>
+        </div>
+    </div>
+
     <a href="https://wa.me/5551989610859" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
         &#x2709;
     </a>
@@ -241,7 +307,9 @@
                 'pricing_text': '1 aula avulsa por R$ 120,00.',
                 'pricing_promo': 'Pacote de 4 aulas, ganha 1 grátis!',
                 'contact_title': 'Entre em Contato',
-                'contact_text': 'Mande uma mensagem e comece a sua jornada musical!'
+                'contact_text': 'Mande uma mensagem e comece a sua jornada musical!',
+                'promo_title': 'Atenção!',
+                'promo_text': '50% de desconto para os 50 primeiros alunos!'
             },
             'en': {
                 'site-title': 'Online Guitar Classes',
@@ -260,7 +328,9 @@
                 'pricing_text': '1 single class for $ 25.00.',
                 'pricing_promo': 'Buy 4 classes, get 1 free!',
                 'contact_title': 'Contact Us',
-                'contact_text': 'Send a message and start your musical journey!'
+                'contact_text': 'Send a message and start your musical journey!',
+                'promo_title': 'Attention!',
+                'promo_text': '50% discount for the first 50 students!'
             },
             'es': {
                 'site-title': 'Clases de Guitarra Online',
@@ -279,9 +349,29 @@
                 'pricing_text': '1 clase individual por € 23,00.',
                 'pricing_promo': 'Paquete de 4 clases, ¡recibe 1 gratis!',
                 'contact_title': 'Contáctenos',
-                'contact_text': '¡Envía un mensaje y comienza tu viaje musical!'
+                'contact_text': '¡Envía un mensaje y comienza tu viaje musical!',
+                'promo_title': '¡Atención!',
+                'promo_text': '¡50% de descuento para los primeros 50 estudiantes!'
             }
         };
+
+        // Função para mostrar o modal
+        function showModal() {
+            const modal = document.getElementById('promoModal');
+            const promoTitleElement = document.getElementById('promo-title');
+            const promoTextElement = document.getElementById('promo-text');
+            const currentLang = document.documentElement.lang;
+
+            promoTitleElement.textContent = translations[currentLang]['promo_title'];
+            promoTextElement.textContent = translations[currentLang]['promo_text'];
+            modal.style.display = 'block';
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            const modal = document.getElementById('promoModal');
+            modal.style.display = 'none';
+        }
 
         // Função para mudar o idioma
         function changeLanguage(lang) {
@@ -303,12 +393,24 @@
                     element.textContent = translations[lang][key];
                 }
             });
+
+            // Traduz o conteúdo do modal
+            showModal();
         }
 
-        // Carrega o idioma padrão (português) ao abrir a página
+        // Carrega o idioma padrão (português) e mostra o modal ao abrir a página
         document.addEventListener('DOMContentLoaded', () => {
             changeLanguage('pt');
+            showModal();
         });
+
+        // Fecha o modal se o usuário clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('promoModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
