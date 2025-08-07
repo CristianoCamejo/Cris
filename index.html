@@ -17,7 +17,7 @@
             --text-color: #333;
             --background-color: #f0fdf4;
             --card-background: #fff;
-            --accent-color: #ff9800; /* Novo destaque para CTAs */
+            --accent-color: #ff9800;
         }
 
         body {
@@ -35,38 +35,34 @@
             padding: 0 20px;
         }
 
-        header {
+        /* --- Estilos do Novo Cabeçalho --- */
+        .main-header {
             background-color: var(--card-background);
-            color: var(--text-color);
-            padding: 1.5rem 0;
-            text-align: center;
+            padding: 1rem 20px;
             border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .logo {
-            max-width: 250px;
+        .main-header .logo {
+            max-width: 150px; /* Logo menor */
             height: auto;
             display: block;
-            margin: 0 auto 1.5rem auto;
         }
 
-        nav {
-            background-color: var(--primary-color);
-            padding: 0.5rem 0;
-            text-align: center;
-        }
-
-        nav a {
-            color: #fff;
-            margin: 0 15px;
+        .main-header nav a {
+            color: var(--dark-color);
+            margin-left: 20px;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: #e0e0e0;
+        .main-header nav a:hover {
+            color: var(--primary-color);
         }
+        /* --- Fim dos Estilos do Novo Cabeçalho --- */
 
         section {
             padding: 80px 0;
@@ -94,7 +90,7 @@
         }
 
         .cta-button {
-            background-color: var(--accent-color); /* Cor de destaque */
+            background-color: var(--accent-color);
             color: #fff;
             padding: 15px 30px;
             text-decoration: none;
@@ -111,7 +107,6 @@
             transform: scale(1.05);
         }
 
-        /* --- Estilos para a nova seção de diferenciais --- */
         .usp-grid {
             display: flex;
             justify-content: center;
@@ -144,7 +139,6 @@
             font-size: 1.2rem;
             color: var(--dark-color);
         }
-        /* --- Fim dos estilos para a nova seção --- */
 
         .course-grid {
             display: flex;
@@ -214,7 +208,7 @@
             border-radius: 4px;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Alinha o conteúdo ao centro */
+            align-items: center;
         }
 
         .depoimento-card p {
@@ -295,9 +289,9 @@
         <button onclick="changeLanguage('es')">🇪🇸</button>
     </div>
 
-    <header>
-        <div class="container">
-            <img src="1754445533757 (1).jpg" alt="Logotipo Guitar Class Online" class="logo">
+    <header class="main-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="#"><img src="1754445533757 (1).jpg" alt="Logotipo Guitar Class Online" class="logo"></a>
             <nav>
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#usp" class="nav-link" data-lang-key="nav_usp">Vantagens</a>
@@ -507,7 +501,7 @@
                 'course_base_benefits': ['Aprende los acordes fundamentales para pop y rock.', 'Domina ritmos de forma sencilla e intuitiva.', 'Desarrolla la coordinación y el cambio de acordes.'],
                 'course_solo_title': 'Essential Guitar Solo',
                 'course_solo_text_intro': 'Desarrolla tu técnica y **crea solos increíbles para destacar**.',
-                'course_solo_benefits': ['Aprende técnicas de improvisación y creación de solos.', 'Domina escalas, arpegios y bends.', 'Mejora la agilidad y la expresividad en la guitarra.'],
+                'course_solo_benefits': ['Aprende técnicas de improvisación y creación de solos.', 'Domina escalas, arpejos y bends.', 'Mejora la agilidad y la expresividad en la guitarra.'],
                 'testimonials_title': 'Lo que dicen nuestros alumnos',
                 'testimonial_1_text': '"Siempre quise aprender y pensé que era difícil. ¡Con el método de Guitar Class, evolucioné en pocos meses y ya estoy tocando mis canciones favoritas!"',
                 'testimonial_1_author': '- Lucas S.',
