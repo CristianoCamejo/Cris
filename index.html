@@ -121,6 +121,76 @@
             font-size: 1.5rem;
         }
 
+        .course-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .course-card ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .course-card ul li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .cta-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--dark-color);
+            transform: scale(1.05);
+        }
+
+        .depoimento-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .depoimento-card {
+            background: var(--card-background);
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            max-width: 400px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+
+        .depoimento-card p {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .depoimento-card .autor {
+            font-weight: bold;
+            text-align: right;
+            color: var(--dark-color);
+            margin: 0;
+        }
+
         .language-switcher {
             text-align: right;
             padding: 10px;
@@ -155,7 +225,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 38px; /* AUMENTADO */
+            font-size: 38px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             text-decoration: none;
@@ -181,6 +251,7 @@
             <nav>
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
+                <a href="#testimonials" class="nav-link" data-lang-key="nav_testimonials">Depoimentos</a>
                 <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Preços</a>
                 <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
             </nav>
@@ -189,8 +260,8 @@
 
     <section id="about">
         <div class="container">
-            <h2 data-lang-key="about_title">Bem-vindo(a)</h2>
-            <p data-lang-key="about_text">Aprenda a tocar violão no seu próprio ritmo com aulas online e personalizadas.</p>
+            <h2 data-lang-key="about_title">Sua Jornada Musical Começa Aqui</h2>
+            <p data-lang-key="about_text">Chega de adiar o sonho de tocar violão! Com a **Guitar Class Online**, você aprende no seu ritmo, com um método flexível e aulas 100% personalizadas para seus objetivos.</p>
         </div>
     </section>
 
@@ -200,11 +271,37 @@
             <div class="course-grid">
                 <div class="course-card">
                     <h3 data-lang-key="course_base_title">Essential Guitar Base</h3>
-                    <p data-lang-key="course_base_text">Aprenda os acordes, ritmos e a base fundamental para tocar suas músicas favoritas.</p>
+                    <p data-lang-key="course_base_text_intro">Construa uma base sólida para tocar suas músicas favoritas com confiança.</p>
+                    <ul data-lang-key="course_base_benefits">
+                        <li>Aprenda os acordes fundamentais.</li>
+                        <li>Domine os ritmos mais usados no pop e rock.</li>
+                        <li>Ideal para iniciantes.</li>
+                    </ul>
                 </div>
                 <div class="course-card">
                     <h3 data-lang-key="course_solo_title">Essential Guitar Solo</h3>
-                    <p data-lang-key="course_solo_text">Desenvolva sua técnica de solo, escala e improvisação. Perfeito para quem quer se destacar.</p>
+                    <p data-lang-key="course_solo_text_intro">Desenvolva sua técnica e crie solos incríveis para se destacar.</p>
+                    <ul data-lang-key="course_solo_benefits">
+                        <li>Aprenda técnicas de improvisação.</li>
+                        <li>Domine escalas e arpejos.</li>
+                        <li>Perfeito para quem já tem uma base.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2 data-lang-key="testimonials_title">O que nossos alunos dizem</h2>
+            <div class="depoimento-grid">
+                <div class="depoimento-card">
+                    <p data-lang-key="testimonial_1_text">"Sempre quis aprender e achava que era difícil. Com o método da Guitar Class, evoluí em poucos meses e já estou tocando minhas músicas favoritas!"</p>
+                    <p class="autor" data-lang-key="testimonial_1_author">- Lucas S.</p>
+                </div>
+                <div class="depoimento-card">
+                    <p data-lang-key="testimonial_2_text">"O professor é super atencioso e as aulas são focadas no que eu preciso. Recomendo muito!"</p>
+                    <p class="autor" data-lang-key="testimonial_2_author">- Mari C.</p>
                 </div>
             </div>
         </div>
@@ -212,20 +309,22 @@
 
     <section id="pricing">
         <div class="container">
-            <h2 data-lang-key="pricing_title">Preços</h2>
-            <p data-lang-key="pricing_text">1 aula avulsa por R$ 120,00.</p>
-            <p data-lang-key="pricing_promo">Pacote de 4 aulas, ganha 1 grátis!</p>
+            <h2 data-lang-key="pricing_title">Preços e Planos</h2>
+            <p data-lang-key="pricing_text">Escolha a melhor opção para começar a sua jornada musical hoje mesmo:</p>
+            <p data-lang-key="pricing_promo">1 aula experimental: R$ 120,00</p>
+            <p data-lang-key="pricing_promo_2">Pacote de 4 aulas, **e ganhe a 5ª aula grátis!**</p>
+            <a href="https://wa.me/5551989610859" class="cta-button" data-lang-key="pricing_cta">Quero Começar Agora!</a>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
             <h2 data-lang-key="contact_title">Entre em Contato</h2>
-            <p data-lang-key="contact_text">Mande uma mensagem e comece a sua jornada musical!</p>
+            <p data-lang-key="contact_text">Mande uma mensagem pelo WhatsApp e tire suas dúvidas. Vamos conversar sobre seus objetivos!</p>
+            <a href="https://wa.me/5551989610859" class="cta-button" data-lang-key="contact_cta">Fale Conosco pelo WhatsApp</a>
         </div>
     </section>
 
-    <!-- Botão WhatsApp com ícone oficial ampliado -->
     <a href="https://wa.me/5551989610859" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -235,71 +334,103 @@
             'pt': {
                 'nav_about': 'Sobre',
                 'nav_courses': 'Cursos',
+                'nav_testimonials': 'Depoimentos',
                 'nav_pricing': 'Preços',
                 'nav_contact': 'Contato',
-                'about_title': 'Bem-vindo(a)',
-                'about_text': 'Aprenda a tocar violão no seu próprio ritmo com aulas online e personalizadas.',
+                'about_title': 'Sua Jornada Musical Começa Aqui',
+                'about_text': 'Chega de adiar o sonho de tocar violão! Com a **Guitar Class Online**, você aprende no seu ritmo, com um método flexível e aulas 100% personalizadas para seus objetivos.',
                 'courses_title': 'Nossos Cursos',
                 'course_base_title': 'Essential Guitar Base',
-                'course_base_text': 'Aprenda os acordes, ritmos e a base fundamental para tocar suas músicas favoritas.',
+                'course_base_text_intro': 'Construa uma base sólida para tocar suas músicas favoritas com confiança.',
+                'course_base_benefits': ['Aprenda os acordes fundamentais.', 'Domine os ritmos mais usados no pop e rock.', 'Ideal para iniciantes.'],
                 'course_solo_title': 'Essential Guitar Solo',
-                'course_solo_text': 'Desenvolva sua técnica de solo, escala e improvisação. Perfeito para quem quer se destacar.',
-                'pricing_title': 'Preços',
-                'pricing_text': '1 aula avulsa por R$ 120,00.',
-                'pricing_promo': 'Pacote de 4 aulas, ganha 1 grátis!',
+                'course_solo_text_intro': 'Desenvolva sua técnica e crie solos incríveis para se destacar.',
+                'course_solo_benefits': ['Aprenda técnicas de improvisação.', 'Domine escalas e arpejos.', 'Perfeito para quem já tem uma base.'],
+                'testimonials_title': 'O que nossos alunos dizem',
+                'testimonial_1_text': '"Sempre quis aprender e achava que era difícil. Com o método da Guitar Class, evoluí em poucos meses e já estou tocando minhas músicas favoritas!"',
+                'testimonial_1_author': '- Lucas S.',
+                'testimonial_2_text': '"O professor é super atencioso e as aulas são focadas no que eu preciso. Recomendo muito!"',
+                'testimonial_2_author': '- Mari C.',
+                'pricing_title': 'Preços e Planos',
+                'pricing_text': 'Escolha a melhor opção para começar a sua jornada musical hoje mesmo:',
+                'pricing_promo': '1 aula experimental: R$ 120,00',
+                'pricing_promo_2': 'Pacote de 4 aulas, **e ganhe a 5ª aula grátis!**',
+                'pricing_cta': 'Quero Começar Agora!',
                 'contact_title': 'Entre em Contato',
-                'contact_text': 'Mande uma mensagem e comece a sua jornada musical!'
+                'contact_text': 'Mande uma mensagem pelo WhatsApp e tire suas dúvidas. Vamos conversar sobre seus objetivos!',
+                'contact_cta': 'Fale Conosco pelo WhatsApp'
             },
             'en': {
                 'nav_about': 'About',
                 'nav_courses': 'Courses',
+                'nav_testimonials': 'Testimonials',
                 'nav_pricing': 'Pricing',
                 'nav_contact': 'Contact',
-                'about_title': 'Welcome',
-                'about_text': 'Learn to play the guitar at your own pace with personalized online classes.',
+                'about_title': 'Your Musical Journey Starts Here',
+                'about_text': 'Stop postponing the dream of playing guitar! With **Guitar Class Online**, you learn at your own pace, with a flexible method and 100% personalized classes for your goals.',
                 'courses_title': 'Our Courses',
                 'course_base_title': 'Essential Guitar Base',
-                'course_base_text': 'Learn chords, rhythms, and the fundamental base to play your favorite songs.',
+                'course_base_text_intro': 'Build a solid foundation to play your favorite songs with confidence.',
+                'course_base_benefits': ['Learn the fundamental chords.', 'Master the most used rhythms in pop and rock.', 'Ideal for beginners.'],
                 'course_solo_title': 'Essential Guitar Solo',
-                'course_solo_text': 'Develop your solo technique, scales, and improvisation. Perfect for those who want to stand out.',
-                'pricing_title': 'Pricing',
-                'pricing_text': '1 single class for $ 25.00.',
-                'pricing_promo': 'Buy 4 classes, get 1 free!',
+                'course_solo_text_intro': 'Develop your technique and create amazing solos to stand out.',
+                'course_solo_benefits': ['Learn improvisation techniques.', 'Master scales and arpeggios.', 'Perfect for those who already have a foundation.'],
+                'testimonials_title': 'What our students say',
+                'testimonial_1_text': '"I always wanted to learn and thought it was difficult. With the Guitar Class method, I evolved in a few months and I\'m already playing my favorite songs!"',
+                'testimonial_1_author': '- Lucas S.',
+                'testimonial_2_text': '"The teacher is super attentive and the classes are focused on what I need. I highly recommend it!"',
+                'testimonial_2_author': '- Mari C.',
+                'pricing_title': 'Pricing and Plans',
+                'pricing_text': 'Choose the best option to start your musical journey today:',
+                'pricing_promo': '1 trial class: $ 25.00',
+                'pricing_promo_2': '4-class package, **and get the 5th class free!**',
+                'pricing_cta': 'I Want to Start Now!',
                 'contact_title': 'Contact Us',
-                'contact_text': 'Send a message and start your musical journey!'
+                'contact_text': 'Send us a message on WhatsApp and ask your questions. Let\'s talk about your goals!',
+                'contact_cta': 'Contact us on WhatsApp'
             },
             'es': {
                 'nav_about': 'Acerca de',
                 'nav_courses': 'Cursos',
+                'nav_testimonials': 'Testimonios',
                 'nav_pricing': 'Precios',
                 'nav_contact': 'Contacto',
-                'about_title': 'Bienvenido(a)',
-                'about_text': 'Aprende a tocar la guitarra a tu propio ritmo con clases online y personalizadas.',
+                'about_title': 'Tu Viaje Musical Comienza Aquí',
+                'about_text': '¡Deja de posponer el sueño de tocar la guitarra! Con **Guitar Class Online**, aprendes a tu propio ritmo, con un método flexible y clases 100% personalizadas para tus objetivos.',
                 'courses_title': 'Nuestros Cursos',
                 'course_base_title': 'Essential Guitar Base',
-                'course_base_text': 'Aprende acordes, ritmos y la base fundamental para tocar tus canciones favoritas.',
+                'course_base_text_intro': 'Construye una base sólida para tocar tus canciones favoritas con confianza.',
+                'course_base_benefits': ['Aprende los acordes fundamentales.', 'Domina los ritmos más utilizados en pop y rock.', 'Ideal para principiantes.'],
                 'course_solo_title': 'Essential Guitar Solo',
-                'course_solo_text': 'Desarrolla tu técnica de solo, escalas e improvisación. Perfecto para quienes quieren destacarse.',
-                'pricing_title': 'Precios',
-                'pricing_text': '1 clase individual por € 23,00.',
-                'pricing_promo': 'Paquete de 4 clases, ¡recibe 1 gratis!',
+                'course_solo_text_intro': 'Desarrolla tu técnica y crea solos increíbles para destacarte.',
+                'course_solo_benefits': ['Aprende técnicas de improvisación.', 'Domina escalas y arpegios.', 'Perfecto para quienes ya tienen una base.'],
+                'testimonials_title': 'Lo que dicen nuestros alumnos',
+                'testimonial_1_text': '"Siempre quise aprender y pensé que era difícil. ¡Con el método de Guitar Class, evolucioné en pocos meses y ya estoy tocando mis canciones favoritas!"',
+                'testimonial_1_author': '- Lucas S.',
+                'testimonial_2_text': '"El profesor es muy atento y las clases se centran en lo que necesito. ¡Lo recomiendo mucho!"',
+                'testimonial_2_author': '- Mari C.',
+                'pricing_title': 'Precios y Planes',
+                'pricing_text': 'Elige la mejor opción para comenzar tu viaje musical hoy mismo:',
+                'pricing_promo': '1 clase de prueba: € 23,00',
+                'pricing_promo_2': 'Paquete de 4 clases, **¡y recibe la 5ª clase gratis!**',
+                'pricing_cta': '¡Quiero Empezar Ahora!',
                 'contact_title': 'Contáctenos',
-                'contact_text': '¡Envía un mensaje y comienza tu viaje musical!'
+                'contact_text': 'Envíanos un mensaje por WhatsApp y aclara tus dudas. ¡Hablemos de tus objetivos!',
+                'contact_cta': 'Contáctanos por WhatsApp'
             }
         };
 
         function changeLanguage(lang) {
             document.documentElement.lang = lang;
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                const key = link.getAttribute('data-lang-key');
-                link.textContent = translations[lang][key];
-            });
-
             document.querySelectorAll('[data-lang-key]').forEach(element => {
-                if (element.tagName !== 'A') {
-                    const key = element.getAttribute('data-lang-key');
-                    element.textContent = translations[lang][key];
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    if (Array.isArray(translations[lang][key])) {
+                        element.innerHTML = translations[lang][key].map(item => `<li>${item}</li>`).join('');
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
                 }
             });
         }
