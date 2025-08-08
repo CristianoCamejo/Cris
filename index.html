@@ -263,51 +263,6 @@
             margin-left: -1em;
         }
 
-        .depoimento-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .depoimento-card {
-            background: var(--card-background);
-            border-left: 5px solid var(--primary-color);
-            padding: 25px;
-            max-width: 400px;
-            text-align: left;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .depoimento-card p {
-            font-style: italic;
-            margin-bottom: 10px;
-            color: #555;
-            text-align: center;
-        }
-
-        .depoimento-card .autor {
-            font-weight: bold;
-            text-align: right;
-            color: var(--dark-color);
-            margin: 0;
-            width: 100%;
-        }
-        
-        .depoimento-card .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 2px solid var(--primary-color);
-        }
-
         .language-switcher {
             text-align: right;
             padding: 10px;
@@ -375,7 +330,6 @@
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#usp" class="nav-link" data-lang-key="nav_usp">Vantagens</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
-                <a href="#testimonials" class="nav-link" data-lang-key="nav_testimonials">Depoimentos</a>
                 <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Preços</a>
                 <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
             </nav>
@@ -439,24 +393,6 @@
         </div>
     </section>
 
-    <section id="testimonials">
-        <div class="container">
-            <h2 data-lang-key="testimonials_title">O que nossos alunos dizem</h2>
-            <div class="depoimento-grid">
-                <div class="depoimento-card">
-                    <img src="placeholder_user1.jpg" alt="Foto de Lucas S." class="avatar">
-                    <p data-lang-key="testimonial_1_text">"Sempre quis aprender e achava que era difícil. Com o método da Guitar Class, evoluí em poucos meses e já estou tocando minhas músicas favoritas!"</p>
-                    <p class="autor" data-lang-key="testimonial_1_author">- Lucas S.</p>
-                </div>
-                <div class="depoimento-card">
-                    <img src="placeholder_user2.jpg" alt="Foto de Mari C." class="avatar">
-                    <p data-lang-key="testimonial_2_text">"O professor é super atencioso e as aulas são focadas no que eu preciso. Recomendo muito!"</p>
-                    <p class="autor" data-lang-key="testimonial_2_author">- Mari C.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="pricing">
         <div class="container">
             <h2 data-lang-key="pricing_title">Preços e Planos</h2>
@@ -485,7 +421,6 @@
                 'nav_about': 'Sobre',
                 'nav_usp': 'Vantagens',
                 'nav_courses': 'Cursos',
-                'nav_testimonials': 'Depoimentos',
                 'nav_pricing': 'Preços',
                 'nav_contact': 'Contato',
                 'about_title': 'Sua Jornada Musical Começa Aqui',
@@ -505,11 +440,6 @@
                 'course_solo_title': 'Essential Guitar Solo',
                 'course_solo_text_intro': 'Desenvolva sua técnica e **crie solos incríveis para se destacar**.',
                 'course_solo_benefits': ['Aprenda técnicas de improvisação e criação de solos.', 'Domine escalas, arpejos e bends.', 'Melhore a agilidade e a expressividade na guitarra.'],
-                'testimonials_title': 'O que nossos alunos dizem',
-                'testimonial_1_text': '"Sempre quis aprender e achava que era difícil. Com o método da Guitar Class, evoluí em poucos meses e já estou tocando minhas músicas favoritas!"',
-                'testimonial_1_author': '- Lucas S.',
-                'testimonial_2_text': '"O professor é super atencioso e as aulas são focadas no que eu preciso. Recomendo muito!"',
-                'testimonial_2_author': '- Mari C.',
                 'pricing_title': 'Preços e Planos',
                 'pricing_text': 'Escolha a melhor opção para começar a sua jornada musical hoje mesmo:',
                 'pricing_promo': '1 aula experimental: **R$ 120,00**',
@@ -523,7 +453,6 @@
                 'nav_about': 'About',
                 'nav_usp': 'Advantages',
                 'nav_courses': 'Courses',
-                'nav_testimonials': 'Testimonials',
                 'nav_pricing': 'Pricing',
                 'nav_contact': 'Contact',
                 'about_title': 'Your Musical Journey Starts Here',
@@ -543,11 +472,6 @@
                 'course_solo_title': 'Essential Guitar Solo',
                 'course_solo_text_intro': 'Develop your technique and **create amazing solos to stand out**.',
                 'course_solo_benefits': ['Learn improvisation and solo creation techniques.', 'Master scales, arpeggios, and bends.', 'Improve agility and expressiveness on the guitar.'],
-                'testimonials_title': 'What our students say',
-                'testimonial_1_text': '"I always wanted to learn and thought it was difficult. With the Guitar Class method, I evolved in a few months and I\'m already playing my favorite songs!"',
-                'testimonial_1_author': '- Lucas S.',
-                'testimonial_2_text': '"The teacher is super attentive and the classes are focused on what I need. I highly recommend it!"',
-                'testimonial_2_author': '- Mari C.',
                 'pricing_title': 'Pricing and Plans',
                 'pricing_text': 'Choose the best option to start your musical journey today:',
                 'pricing_promo': '1 trial class: **$ 25.00**',
@@ -561,7 +485,6 @@
                 'nav_about': 'Acerca de',
                 'nav_usp': 'Ventajas',
                 'nav_courses': 'Cursos',
-                'nav_testimonials': 'Testimonios',
                 'nav_pricing': 'Precios',
                 'nav_contact': 'Contacto',
                 'about_title': 'Tu Viaje Musical Comienza Aquí',
@@ -581,11 +504,6 @@
                 'course_solo_title': 'Essential Guitar Solo',
                 'course_solo_text_intro': 'Desarrolla tu técnica y **crea solos increíbles para destacar**.',
                 'course_solo_benefits': ['Aprende técnicas de improvisación y creación de solos.', 'Domina escalas, arpejos y bends.', 'Mejora la agilidad y la expresividad en la guitarra.'],
-                'testimonials_title': 'Lo que dicen nuestros alumnos',
-                'testimonial_1_text': '"Siempre quise aprender y pensé que era difícil. ¡Con el método de Guitar Class, evolucioné en pocos meses y ya estoy tocando mis canciones favoritas!"',
-                'testimonial_1_author': '- Lucas S.',
-                'testimonial_2_text': '"El profesor es muy atento y las clases se centran en lo que necesito. ¡Lo recomiendo mucho!"',
-                'testimonial_2_author': '- Mari C.',
                 'pricing_title': 'Precios y Planes',
                 'pricing_text': 'Elige la mejor opción para comenzar tu viaje musical hoy mismo:',
                 'pricing_promo': '1 clase de prueba: **€ 23,00**',
