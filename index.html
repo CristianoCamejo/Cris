@@ -229,6 +229,9 @@
             max-width: 450px;
             text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .course-card:hover {
@@ -237,18 +240,17 @@
         }
         
         .course-card-highlighted {
-            /* Removido o fundo verde escuro para melhorar a legibilidade */
             background-color: var(--card-background); 
             border: 3px solid var(--accent-color);
             transform: scale(1.05);
         }
 
         .course-card-highlighted h3, .course-card-highlighted p, .course-card-highlighted b {
-            color: var(--dark-color); /* Texto em cor escura para contraste */
+            color: var(--dark-color); 
         }
         
         .course-card-highlighted ul li, .course-card-highlighted li {
-            color: var(--text-color); /* Itens da lista em cor escura */
+            color: var(--text-color); 
         }
 
         .course-card-highlighted h3 {
@@ -256,7 +258,7 @@
         }
         
         .course-card-highlighted ul li::before {
-            color: var(--primary-color); /* Ícone de checkmark em verde primário */
+            color: var(--primary-color); 
         }
 
         .course-card-highlighted .badge {
@@ -294,7 +296,7 @@
         }
         
         .course-card-highlighted ul li b {
-            color: var(--dark-color); /* Texto em negrito dentro da lista também em cor escura */
+            color: var(--dark-color); 
         }
 
         .course-card ul li::before {
@@ -304,6 +306,17 @@
             display: inline-block;
             width: 1em;
             margin-left: -1em;
+        }
+        
+        .course-card-button {
+            margin-top: auto; /* Alinha o botão na parte inferior do card */
+            display: block;
+            text-align: center;
+        }
+        
+        .course-card-button .cta-button {
+            margin-top: 20px;
+            width: 100%;
         }
 
         .language-switcher {
@@ -415,26 +428,31 @@
             <h2 data-lang-key="courses_title">Seu Plano de Aprendizagem</h2>
             <div class="course-grid">
                 <div class="course-card course-card-highlighted">
-                    <span class="badge">Conteúdos Práticos (Trimestre)</span>
-                    <p>Curso intensivo, desenvolvido com base no sistema CAGED... Rápido e prático...</p>
-                    <br>
-                    <h4>Conteúdos:</h4>
-                    <ul>
-                        <li><b>Cadências:</b> 451 Maior, 451 Menor</li>
-                        <li><b>Ritmo:</b> 3/4, 4/4</li>
-                    </ul>
-                    <h4>Repertórios Musicais</h4>
-                    <ul>
-                        <li><b>Exercícios de Coordenação:</b> Escala Maior e Menor</li>
-                    </ul>
-                    <h4>Melodias</h4>
-                    <ul>
-                        <li><b>Repertório Musical Melódico</b></li>
-                    </ul>
-                    <p>Na conclusão deste, o aluno estará apto a tocar os acompanhamentos de Contra Baixo, Violão e Guitarra, além de cantar e solar as melodias das músicas.</p>
+                    <div>
+                        <span class="badge">Conteúdos Práticos (Trimestre)</span>
+                        <h3>Essential Guitar Base</h3>
+                        <p>Curso intensivo, desenvolvido com base no sistema CAGED... Rápido e prático...</p>
+                        <br>
+                        <h4>Conteúdos:</h4>
+                        <ul>
+                            <li><b>Cadências:</b> 451 Maior, 451 Menor</li>
+                            <li><b>Ritmo:</b> 3/4, 4/4</li>
+                        </ul>
+                        <h4>Repertórios Musicais</h4>
+                        <ul>
+                            <li><b>Exercícios de Coordenação:</b> Agilidade com as Escalas Maior e Menor</li>
+                        </ul>
+                        <h4>Melodias</h4>
+                        <ul>
+                            <li><b>Repertório Musical Melódico</b></li>
+                        </ul>
+                        <p>Na conclusão deste, o aluno estará apto a tocar os acompanhamentos de Contra Baixo, Violão e Guitarra, além de cantar e solar as melodias das músicas.</p>
+                    </div>
+                    <div class="course-card-button">
+                        <a href="#pricing" class="cta-button" data-lang-key="hero_cta">Quero Começar Agora e Tocar Minhas Músicas!</a>
+                    </div>
                 </div>
             </div>
-            <a href="#pricing" class="cta-button" data-lang-key="hero_cta">Quero Começar Agora e Tocar Minhas Músicas!</a>
         </div>
     </section>
 
@@ -469,7 +487,7 @@
                 'nav_pricing': 'Preços',
                 'nav_contact': 'Contato',
                 'about_title': 'Aprenda a tocar e cantar em um mesmo curso',
-                'about_text': 'Como o Curso Essential Guitar Base, o aluno estará apto a acompanhar músicas conforme o Contra-Baixo, Guitarra Base, Guitarra Solo e Violão, além de Cantar as músicas prediletas...',
+                'about_text': 'Com o Curso Essential Guitar Base, o aluno estará apto a acompanhar músicas conforme o Contra-Baixo, Guitarra Base, Guitarra Solo e Violão, além de Cantar as músicas prediletas...',
                 'hero_cta': 'Maiores informações',
                 'usp_title': 'Por que o Essential Guitar Base é a sua melhor escolha?',
                 'usp_1_title': 'Resultados Rápidos',
@@ -479,10 +497,10 @@
                 'usp_3_title': 'Aulas Personalizadas',
                 'usp_3_text': 'O professor se adapta ao seu ritmo e estilo musical, garantindo que o aprendizado seja divertido e focado no que você quer.',
                 'courses_title': 'Seu Plano de Aprendizagem',
-                'course_badge': 'Curso de 10 aulas',
-                'course_base_title': 'Essential Guitar Base: Do Zero ao Sucesso!',
-                'course_base_text_intro': 'Construa uma base sólida para **tocar e cantar suas músicas favoritas** com um método prático e direto.',
-                'course_base_benefits': ['**Conteúdos Práticos:** Aprenda com o sistema **CAGED**, que simplifica acordes e escalas, focando nas cadências mais usadas (Ex: **CDG** para ritmo 4/4 e **AmDmEm** para 3/4).', '**Coordenação:** Desenvolva agilidade nas mãos com exercícios e escalas maiores e menores.', '**Melodias e Repertório:** Aprenda melodias simples (como "<b>Ode à Alegria</b>") e aplique-as em um repertório musical selecionado para o seu gosto.', '**Conclusão:** Finalize o curso com uma **música de apresentação**, onde você toca, canta e sola!'],
+                'course_badge': 'Conteúdos Práticos (Trimestre)',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text_intro': 'Curso intensivo, desenvolvido com base no sistema CAGED... Rápido e prático...',
+                'course_base_benefits': ['<b>Cadências:</b> 451 Maior, 451 Menor', '<b>Ritmo:</b> 3/4, 4/4', '<b>Exercícios de Coordenação:</b> Agilidade com as Escalas Maior e Menor', '<b>Melodias:</b> Repertório Musical Melódico', 'Na conclusão deste, o aluno estará apto a tocar os acompanhamentos de Contra Baixo, Violão e Guitarra, além de cantar e solar as melodias das músicas.'],
                 'pricing_title': 'Comece Hoje a Tocar e Cantar',
                 'pricing_text': 'Escolha a melhor opção para começar a sua jornada musical:',
                 'pricing_promo': '1 aula experimental: **R$ 120,00**',
@@ -509,10 +527,10 @@
                 'usp_3_title': 'Personalized Classes',
                 'usp_3_text': 'The teacher adapts to your pace and musical style, ensuring that learning is fun and focused on what you want.',
                 'courses_title': 'Your Learning Plan',
-                'course_badge': '10-class Course',
-                'course_base_title': 'Essential Guitar Base: From Zero to Success!',
-                'course_base_text_intro': 'Build a solid foundation to **play and sing your favorite songs** with a practical and direct method.',
-                'course_base_benefits': ['**Practical Contents:** Learn with the **CAGED** system, which simplifies chords and scales, focusing on the most used cadences (e.g., **CDG** for 4/4 rhythm and **AmDmEm** for 3/4).', '**Coordination:** Develop hand agility with exercises and major and minor scales.', '**Melodies and Repertory:** Learn simple melodies (like "<b>Ode to Joy</b>") and apply them to a musical repertoire selected for your taste.', '**Conclusion:** Finish the course with a **presentation song**, where you play, sing, and solo!'],
+                'course_badge': 'Practical Contents (Quarterly)',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text_intro': 'Intensive course, developed based on the CAGED system... Fast and practical...',
+                'course_base_benefits': ['<b>Cadences:</b> 451 Major, 451 Minor', '<b>Rhythm:</b> 3/4, 4/4', '<b>Coordination Exercises:</b> Agility with Major and Minor Scales', '<b>Melodies:</b> Melodic Musical Repertoire', 'Upon completion, the student will be able to play bass, acoustic guitar, and rhythm guitar accompaniments, as well as sing and solo the melodies of songs.'],
                 'pricing_title': 'Start Playing and Singing Today',
                 'pricing_text': 'Choose the best option to start your musical journey:',
                 'pricing_promo': '1 trial class: **$ 25.00**',
@@ -539,10 +557,10 @@
                 'usp_3_title': 'Clases Personalizadas',
                 'usp_3_text': 'El profesor se adapta a tu ritmo y estilo musical, garantizando que el aprendizaje sea divertido y se centre en lo que quieres.',
                 'courses_title': 'Tu Plan de Aprendizaje',
-                'course_badge': 'Curso de 10 clases',
-                'course_base_title': 'Essential Guitar Base: ¡De Cero al Éxito!',
-                'course_base_text_intro': 'Construye una base sólida para **tocar y cantar tus canciones favoritas** con un método práctico y directo.',
-                'course_base_benefits': ['**Contenidos Prácticos:** Aprende con el sistema **CAGED**, que simplifica acordes y escalas, centrándose en las cadencias más utilizadas (ej: **CDG** para ritmo 4/4 y **AmDmEm** para 3/4).', '**Coordinación:** Desarrolla agilidad en las manos con ejercicios y escalas mayores y menores.', '**Melodías y Repertorio:** Aprende melodías sencillas (como "<b>Oda a la Alegría</b>") y aplícalas a un repertorio musical seleccionado para tu gusto.', '**Conclusión:** ¡Finaliza el curso con una **canción de presentación**, donde tocas, cantas y haces solos!'],
+                'course_badge': 'Contenidos Prácticos (Trimestral)',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text_intro': 'Curso intensivo, desarrollado en base al sistema CAGED... Rápido y práctico...',
+                'course_base_benefits': ['<b>Cadencias:</b> 451 Mayor, 451 Menor', '<b>Ritmo:</b> 3/4, 4/4', '<b>Ejercicios de Coordinación:</b> Agilidad con las Escalas Mayor y Menor', '<b>Melodías:</b> Repertorio Musical Melódico', 'Al finalizar, el estudiante podrá tocar los acompañamientos de Bajo, Guitarra Acústica y Guitarra Rítmica, así como cantar y hacer solos de las melodías de las canciones.'],
                 'pricing_title': 'Empieza Hoy a Tocar y Cantar',
                 'pricing_text': 'Elige la mejor opción para comenzar tu viaje musical:',
                 'pricing_promo': '1 clase de prueba: **€ 23,00**',
