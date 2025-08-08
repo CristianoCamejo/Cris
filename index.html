@@ -237,26 +237,30 @@
         }
         
         .course-card-highlighted {
-            background-color: var(--primary-color);
-            color: #fff;
-            transform: scale(1.05);
+            /* Removido o fundo verde escuro para melhorar a legibilidade */
+            background-color: var(--card-background); 
             border: 3px solid var(--accent-color);
+            transform: scale(1.05);
         }
 
         .course-card-highlighted h3, .course-card-highlighted p, .course-card-highlighted b {
-            color: #fff; /* Texto branco para melhor contraste */
+            color: var(--dark-color); /* Texto em cor escura para contraste */
+        }
+        
+        .course-card-highlighted ul li, .course-card-highlighted li {
+            color: var(--text-color); /* Itens da lista em cor escura */
         }
 
-        .course-card-highlighted ul li, .course-card-highlighted li {
-            color: #fff; /* Itens da lista em branco */
+        .course-card-highlighted h3 {
+            color: var(--primary-color);
         }
         
         .course-card-highlighted ul li::before {
-            color: var(--accent-color); /* Ícone de checkmark em laranja */
+            color: var(--primary-color); /* Ícone de checkmark em verde primário */
         }
 
         .course-card-highlighted .badge {
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             color: #fff;
             padding: 5px 10px;
             border-radius: 5px;
@@ -290,7 +294,7 @@
         }
         
         .course-card-highlighted ul li b {
-            color: #fff; /* Texto em negrito dentro da lista também em branco */
+            color: var(--dark-color); /* Texto em negrito dentro da lista também em cor escura */
         }
 
         .course-card ul li::before {
@@ -500,7 +504,7 @@
                 'course_badge': '10-class Course',
                 'course_base_title': 'Essential Guitar Base: From Zero to Success!',
                 'course_base_text_intro': 'Build a solid foundation to **play and sing your favorite songs** with a practical and direct method.',
-                'course_base_benefits': ['**Practical Contents:** Learn with the **CAGED** system, which simplifies chords and scales, focusing on the most used cadences (e.g., **CDG** for 4/4 rhythm and **AmDmEm** for 3/4).', '**Coordination:** Develop hand agility with exercises and major and minor scales.', '**Melodies and Repertoire:** Learn simple melodies (like "<b>Ode to Joy</b>") and apply them to a musical repertoire selected for your taste.', '**Conclusion:** Finish the course with a **presentation song**, where you play, sing, and solo!'],
+                'course_base_benefits': ['**Practical Contents:** Learn with the **CAGED** system, which simplifies chords and scales, focusing on the most used cadences (e.g., **CDG** for 4/4 rhythm and **AmDmEm** for 3/4).', '**Coordination:** Develop hand agility with exercises and major and minor scales.', '**Melodies and Repertory:** Learn simple melodies (like "<b>Ode to Joy</b>") and apply them to a musical repertoire selected for your taste.', '**Conclusion:** Finish the course with a **presentation song**, where you play, sing, and solo!'],
                 'pricing_title': 'Start Playing and Singing Today',
                 'pricing_text': 'Choose the best option to start your musical journey:',
                 'pricing_promo': '1 trial class: **$ 25.00**',
