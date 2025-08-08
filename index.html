@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guitar Class Online</title>
+    <title>Guitar Class Online - Aprenda a Tocar e Cantar</title>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
@@ -262,6 +262,21 @@
             width: 1em;
             margin-left: -1em;
         }
+        
+        .course-card-highlighted {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: scale(1.05);
+            border: 3px solid var(--accent-color);
+        }
+
+        .course-card-highlighted h3 {
+            color: #fff;
+        }
+
+        .course-card-highlighted ul li::before {
+            color: var(--accent-color);
+        }
 
         .language-switcher {
             text-align: right;
@@ -329,7 +344,7 @@
                 </button>
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#usp" class="nav-link" data-lang-key="nav_usp">Vantagens</a>
-                <a href="#courses" class="nav-link" data-lang-key="nav_courses">Cursos</a>
+                <a href="#courses" class="nav-link" data-lang-key="nav_courses">Curso</a>
                 <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Preços</a>
                 <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
             </nav>
@@ -338,30 +353,30 @@
 
     <section id="about">
         <div class="container">
-            <h2 data-lang-key="about_title">Sua Jornada Musical Começa Aqui</h2>
-            <p data-lang-key="about_text">Chega de adiar o sonho de tocar violão! Com a **Guitar Class Online**, você aprende no seu ritmo, com um método flexível e aulas 100% personalizadas para seus objetivos.</p>
-            <a href="#pricing" class="cta-button" data-lang-key="hero_cta">Quero Começar Agora!</a>
+            <h2 data-lang-key="about_title">Aprenda a Tocar e Cantar em Apenas 1 ou 2 Meses!</h2>
+            <p data-lang-key="about_text">Chega de adiar o sonho de tocar suas músicas favoritas. Com o curso **Essential Guitar Base**, você aprende o que realmente importa para tocar e cantar, com um método direto e eficaz.</p>
+            <a href="#courses" class="cta-button" data-lang-key="hero_cta">Quero Tocar e Cantar Agora!</a>
         </div>
     </section>
 
     <section id="usp">
         <div class="container">
-            <h2 data-lang-key="usp_title">Por que escolher a Guitar Class Online?</h2>
+            <h2 data-lang-key="usp_title">Por que o Essential Guitar Base é a sua melhor escolha?</h2>
             <div class="usp-grid">
                 <div class="usp-card">
-                    <div class="icon"><i class="fas fa-handshake"></i></div>
-                    <h3 data-lang-key="usp_1_title">Aulas Personalizadas</h3>
-                    <p data-lang-key="usp_1_text">O ensino é focado nos seus objetivos e no seu ritmo, garantindo um aprendizado rápido e eficiente.</p>
+                    <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3 data-lang-key="usp_1_title">Resultados Rápidos</h3>
+                    <p data-lang-key="usp_1_text">O método é projetado para que você toque suas primeiras músicas em poucas semanas, sem teoria desnecessária.</p>
                 </div>
                 <div class="usp-card">
-                    <div class="icon"><i class="fas fa-calendar-alt"></i></div>
-                    <h3 data-lang-key="usp_2_title">Horários Flexíveis</h3>
-                    <p data-lang-key="usp_2_text">Ajustamos os horários para caber na sua rotina, sem a necessidade de deslocamentos.</p>
+                    <div class="icon"><i class="fas fa-music"></i></div>
+                    <h3 data-lang-key="usp_2_title">Foco em Tocar e Cantar</h3>
+                    <p data-lang-key="usp_2_text">Aprenda os acordes e ritmos essenciais para acompanhar a sua voz e tocar suas músicas favoritas de forma completa.</p>
                 </div>
                 <div class="usp-card">
-                    <div class="icon"><i class="fas fa-globe-americas"></i></div>
-                    <h3 data-lang-key="usp_3_title">Metodologia Efetiva</h3>
-                    <p data-lang-key="usp_3_text">Nosso método foi pensado para te tirar do zero e te fazer tocar suas músicas favoritas em poucos meses.</p>
+                    <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3 data-lang-key="usp_3_title">Aulas Personalizadas</h3>
+                    <p data-lang-key="usp_3_text">O professor se adapta ao seu ritmo e estilo musical, garantindo que o aprendizado seja divertido e focado no que você quer.</p>
                 </div>
             </div>
         </div>
@@ -369,34 +384,26 @@
 
     <section id="courses">
         <div class="container">
-            <h2 data-lang-key="courses_title">Nossos Cursos</h2>
+            <h2 data-lang-key="courses_title">Seu Plano de Aprendizagem</h2>
             <div class="course-grid">
-                <div class="course-card">
-                    <h3 data-lang-key="course_base_title">Essential Guitar Base</h3>
-                    <p data-lang-key="course_base_text_intro">Construa uma base sólida para **tocar suas músicas favoritas com confiança**.</p>
+                <div class="course-card course-card-highlighted">
+                    <h3 data-lang-key="course_base_title">Essential Guitar Base: Do Zero ao Sucesso!</h3>
+                    <p data-lang-key="course_base_text_intro">Construa uma base sólida para **tocar e cantar suas músicas favoritas com confiança em pouco tempo**.</p>
                     <ul data-lang-key="course_base_benefits">
-                        <li>Aprenda os acordes fundamentais para pop e rock.</li>
-                        <li>Domine ritmos de forma simples e intuitiva.</li>
-                        <li>Desenvolva a coordenação e a troca de acordes.</li>
+                        <li>**Acordes essenciais:** Domine os principais acordes para tocar 90% das músicas pop, rock e sertanejo.</li>
+                        <li>**Ritmos e batidas:** Aprenda a marcar o ritmo de forma simples e intuitiva para acompanhar suas canções.</li>
+                        <li>**Músicas práticas:** Coloque a mão na massa desde a primeira aula e aprenda a tocar músicas que você realmente gosta.</li>
                     </ul>
                 </div>
-                <div class="course-card">
-                    <h3 data-lang-key="course_solo_title">Essential Guitar Solo</h3>
-                    <p data-lang-key="course_solo_text_intro">Desenvolva sua técnica e **crie solos incríveis para se destacar**.</p>
-                    <ul data-lang-key="course_solo_benefits">
-                        <li>Aprenda técnicas de improvisação e criação de solos.</li>
-                        <li>Domine escalas, arpejos e bends.</li>
-                        <li>Melhore a agilidade e a expressividade na guitarra.</li>
-                    </ul>
                 </div>
-            </div>
+            <a href="#pricing" class="cta-button" data-lang-key="hero_cta">Quero Começar Agora e Tocar Minhas Músicas!</a>
         </div>
     </section>
 
     <section id="pricing">
         <div class="container">
-            <h2 data-lang-key="pricing_title">Preços e Planos</h2>
-            <p data-lang-key="pricing_text">Escolha a melhor opção para começar a sua jornada musical hoje mesmo:</p>
+            <h2 data-lang-key="pricing_title">Comece Hoje a Tocar e Cantar</h2>
+            <p data-lang-key="pricing_text">Escolha a melhor opção para começar a sua jornada musical:</p>
             <p data-lang-key="pricing_promo">1 aula experimental: **R$ 120,00**</p>
             <p data-lang-key="pricing_promo_2">Pacote de 4 aulas (mensal): **R$ 480,00**, e **ganhe a 5ª aula grátis!**</p>
             <a href="https://wa.me/5551989610859" class="cta-button" data-lang-key="pricing_cta">Quero Me Matricular Agora!</a>
@@ -405,7 +412,7 @@
 
     <section id="contact">
         <div class="container">
-            <h2 data-lang-key="contact_title">Entre em Contato</h2>
+            <h2 data-lang-key="contact_title">Ainda tem dúvidas?</h2>
             <p data-lang-key="contact_text">Mande uma mensagem pelo WhatsApp e tire suas dúvidas. Vamos conversar sobre seus objetivos!</p>
             <a href="https://wa.me/5551989610859" class="cta-button" data-lang-key="contact_cta">Fale Conosco pelo WhatsApp</a>
         </div>
@@ -420,96 +427,87 @@
             'pt': {
                 'nav_about': 'Sobre',
                 'nav_usp': 'Vantagens',
-                'nav_courses': 'Cursos',
+                'nav_courses': 'Curso',
                 'nav_pricing': 'Preços',
                 'nav_contact': 'Contato',
-                'about_title': 'Sua Jornada Musical Começa Aqui',
-                'about_text': 'Chega de adiar o sonho de tocar violão! Com a **Guitar Class Online**, você aprende no seu ritmo, com um método flexível e aulas 100% personalizadas para seus objetivos.',
-                'hero_cta': 'Quero Começar Agora!',
-                'usp_title': 'Por que escolher a Guitar Class Online?',
-                'usp_1_title': 'Aulas Personalizadas',
-                'usp_1_text': 'O ensino é focado nos seus objetivos e no seu ritmo, garantindo um aprendizado rápido e eficiente.',
-                'usp_2_title': 'Horários Flexíveis',
-                'usp_2_text': 'Ajustamos os horários para caber na sua rotina, sem a necessidade de deslocamentos.',
-                'usp_3_title': 'Metodologia Efetiva',
-                'usp_3_text': 'Nosso método foi pensado para te tirar do zero e te fazer tocar suas músicas favoritas em poucos meses.',
-                'courses_title': 'Nossos Cursos',
-                'course_base_title': 'Essential Guitar Base',
-                'course_base_text_intro': 'Construa uma base sólida para **tocar suas músicas favoritas com confiança**.',
-                'course_base_benefits': ['Aprenda os acordes fundamentais para pop e rock.', 'Domine ritmos de forma simples e intuitiva.', 'Desenvolva a coordenação e a troca de acordes.'],
-                'course_solo_title': 'Essential Guitar Solo',
-                'course_solo_text_intro': 'Desenvolva sua técnica e **crie solos incríveis para se destacar**.',
-                'course_solo_benefits': ['Aprenda técnicas de improvisação e criação de solos.', 'Domine escalas, arpejos e bends.', 'Melhore a agilidade e a expressividade na guitarra.'],
-                'pricing_title': 'Preços e Planos',
-                'pricing_text': 'Escolha a melhor opção para começar a sua jornada musical hoje mesmo:',
+                'about_title': 'Aprenda a Tocar e Cantar em Apenas 1 ou 2 Meses!',
+                'about_text': 'Chega de adiar o sonho de tocar suas músicas favoritas. Com o curso **Essential Guitar Base**, você aprende o que realmente importa para tocar e cantar, com um método direto e eficaz.',
+                'hero_cta': 'Quero Tocar e Cantar Agora!',
+                'usp_title': 'Por que o Essential Guitar Base é a sua melhor escolha?',
+                'usp_1_title': 'Resultados Rápidos',
+                'usp_1_text': 'O método é projetado para que você toque suas primeiras músicas em poucas semanas, sem teoria desnecessária.',
+                'usp_2_title': 'Foco em Tocar e Cantar',
+                'usp_2_text': 'Aprenda os acordes e ritmos essenciais para acompanhar a sua voz e tocar suas músicas favoritas de forma completa.',
+                'usp_3_title': 'Aulas Personalizadas',
+                'usp_3_text': 'O professor se adapta ao seu ritmo e estilo musical, garantindo que o aprendizado seja divertido e focado no que você quer.',
+                'courses_title': 'Seu Plano de Aprendizagem',
+                'course_base_title': 'Essential Guitar Base: Do Zero ao Sucesso!',
+                'course_base_text_intro': 'Construa uma base sólida para **tocar e cantar suas músicas favoritas com confiança em pouco tempo**.',
+                'course_base_benefits': ['**Acordes essenciais:** Domine os principais acordes para tocar 90% das músicas pop, rock e sertanejo.', '**Ritmos e batidas:** Aprenda a marcar o ritmo de forma simples e intuitiva para acompanhar suas canções.', '**Músicas práticas:** Coloque a mão na massa desde a primeira aula e aprenda a tocar músicas que você realmente gosta.'],
+                'pricing_title': 'Comece Hoje a Tocar e Cantar',
+                'pricing_text': 'Escolha a melhor opção para começar a sua jornada musical:',
                 'pricing_promo': '1 aula experimental: **R$ 120,00**',
                 'pricing_promo_2': 'Pacote de 4 aulas (mensal): **R$ 480,00**, e **ganhe a 5ª aula grátis!**',
                 'pricing_cta': 'Quero Me Matricular Agora!',
-                'contact_title': 'Entre em Contato',
+                'contact_title': 'Ainda tem dúvidas?',
                 'contact_text': 'Mande uma mensagem pelo WhatsApp e tire suas dúvidas. Vamos conversar sobre seus objetivos!',
                 'contact_cta': 'Fale Conosco pelo WhatsApp'
             },
             'en': {
                 'nav_about': 'About',
                 'nav_usp': 'Advantages',
-                'nav_courses': 'Courses',
+                'nav_courses': 'Course',
                 'nav_pricing': 'Pricing',
                 'nav_contact': 'Contact',
-                'about_title': 'Your Musical Journey Starts Here',
-                'about_text': 'Stop postponing the dream of playing guitar! With **Guitar Class Online**, you learn at your own pace, with a flexible method and 100% personalized classes for your goals.',
-                'hero_cta': 'Start Now!',
-                'usp_title': 'Why choose Guitar Class Online?',
-                'usp_1_title': 'Personalized Classes',
-                'usp_1_text': 'Our teaching is focused on your goals and pace, ensuring a fast and effective learning experience.',
-                'usp_2_title': 'Flexible Schedules',
-                'usp_2_text': 'We adjust the schedules to fit your routine, without the need for travel.',
-                'usp_3_title': 'Effective Methodology',
-                'usp_3_text': 'Our method is designed to take you from zero to playing your favorite songs in just a few months.',
-                'courses_title': 'Our Courses',
-                'course_base_title': 'Essential Guitar Base',
-                'course_base_text_intro': 'Build a solid foundation to **play your favorite songs with confidence**.',
-                'course_base_benefits': ['Learn the fundamental chords for pop and rock.', 'Master rhythms in a simple and intuitive way.', 'Develop coordination and chord changes.'],
-                'course_solo_title': 'Essential Guitar Solo',
-                'course_solo_text_intro': 'Develop your technique and **create amazing solos to stand out**.',
-                'course_solo_benefits': ['Learn improvisation and solo creation techniques.', 'Master scales, arpeggios, and bends.', 'Improve agility and expressiveness on the guitar.'],
-                'pricing_title': 'Pricing and Plans',
-                'pricing_text': 'Choose the best option to start your musical journey today:',
+                'about_title': 'Learn to Play and Sing in Just 1 or 2 Months!',
+                'about_text': 'Stop postponing the dream of playing your favorite songs. With the **Essential Guitar Base** course, you learn what really matters to play and sing, with a direct and effective method.',
+                'hero_cta': 'I Want to Play and Sing Now!',
+                'usp_title': 'Why is the Essential Guitar Base your best choice?',
+                'usp_1_title': 'Fast Results',
+                'usp_1_text': 'The method is designed so you can play your first songs in just a few weeks, without unnecessary theory.',
+                'usp_2_title': 'Focus on Playing and Singing',
+                'usp_2_text': 'Learn the essential chords and rhythms to accompany your voice and play your favorite songs completely.',
+                'usp_3_title': 'Personalized Classes',
+                'usp_3_text': 'The teacher adapts to your pace and musical style, ensuring that learning is fun and focused on what you want.',
+                'courses_title': 'Your Learning Plan',
+                'course_base_title': 'Essential Guitar Base: From Zero to Success!',
+                'course_base_text_intro': 'Build a solid foundation to **play and sing your favorite songs with confidence in a short time**.',
+                'course_base_benefits': ['**Essential chords:** Master the main chords to play 90% of pop, rock, and country songs.', '**Rhythms and beats:** Learn to keep the rhythm in a simple and intuitive way to accompany your songs.', '**Practical songs:** Get hands-on from the very first class and learn to play songs you really like.'],
+                'pricing_title': 'Start Playing and Singing Today',
+                'pricing_text': 'Choose the best option to start your musical journey:',
                 'pricing_promo': '1 trial class: **$ 25.00**',
                 'pricing_promo_2': '4-class package (monthly): **$ 100.00**, and **get the 5th class free!**',
                 'pricing_cta': 'I Want to Enroll Now!',
-                'contact_title': 'Contact Us',
+                'contact_title': 'Still have questions?',
                 'contact_text': 'Send us a message on WhatsApp and ask your questions. Let\'s talk about your goals!',
                 'contact_cta': 'Contact us on WhatsApp'
             },
             'es': {
                 'nav_about': 'Acerca de',
                 'nav_usp': 'Ventajas',
-                'nav_courses': 'Cursos',
+                'nav_courses': 'Curso',
                 'nav_pricing': 'Precios',
                 'nav_contact': 'Contacto',
-                'about_title': 'Tu Viaje Musical Comienza Aquí',
-                'about_text': '¡Deja de posponer el sueño de tocar la guitarra! Con **Guitar Class Online**, aprendes a tu propio ritmo, con un método flexible y clases 100% personalizadas para tus objetivos.',
-                'hero_cta': '¡Empieza Ahora!',
-                'usp_title': '¿Por qué elegir Guitar Class Online?',
-                'usp_1_title': 'Clases Personalizadas',
-                'usp_1_text': 'La enseñanza se centra en tus objetivos y tu ritmo, garantizando un aprendizaje rápido y eficaz.',
-                'usp_2_title': 'Horarios Flexibles',
-                'usp_2_text': 'Ajustamos los horarios para que se adapten a tu rutina, sin necesidad de desplazamientos.',
-                'usp_3_title': 'Metodología Efectiva',
-                'usp_3_text': 'Nuestro método está diseñado para que pases de cero a tocar tus canciones favoritas en solo unos meses.',
-                'courses_title': 'Nuestros Cursos',
-                'course_base_title': 'Essential Guitar Base',
-                'course_base_text_intro': 'Construye una base sólida para **tocar tus canciones favoritas con confianza**.',
-                'course_base_benefits': ['Aprende los acordes fundamentales para pop y rock.', 'Domina ritmos de forma sencilla e intuitiva.', 'Desarrolla la coordinación y el cambio de acordes.'],
-                'course_solo_title': 'Essential Guitar Solo',
-                'course_solo_text_intro': 'Desarrolla tu técnica y **crea solos increíbles para destacar**.',
-                'course_solo_benefits': ['Aprende técnicas de improvisación y creación de solos.', 'Domina escalas, arpejos y bends.', 'Mejora la agilidad y la expresividad en la guitarra.'],
-                'pricing_title': 'Precios y Planes',
-                'pricing_text': 'Elige la mejor opción para comenzar tu viaje musical hoy mismo:',
+                'about_title': '¡Aprende a Tocar y Cantar en Solo 1 o 2 Meses!',
+                'about_text': 'Deja de posponer el sueño de tocar tus canciones favoritas. Con el curso **Essential Guitar Base**, aprendes lo que realmente importa para tocar y cantar, con un método directo y efectivo.',
+                'hero_cta': '¡Quiero Tocar y Cantar Ahora!',
+                'usp_title': '¿Por qué el Essential Guitar Base es tu mejor opción?',
+                'usp_1_title': 'Resultados Rápidos',
+                'usp_1_text': 'El método está diseñado para que toques tus primeras canciones en solo unas semanas, sin teoría innecesaria.',
+                'usp_2_title': 'Enfoque en Tocar y Cantar',
+                'usp_2_text': 'Aprende los acordes y ritmos esenciales para acompañar tu voz y tocar tus canciones favoritas por completo.',
+                'usp_3_title': 'Clases Personalizadas',
+                'usp_3_text': 'El profesor se adapta a tu ritmo y estilo musical, asegurando que el aprendizaje sea divertido y se centre en lo que quieres.',
+                'courses_title': 'Tu Plan de Aprendizaje',
+                'course_base_title': 'Essential Guitar Base: ¡De Cero al Éxito!',
+                'course_base_text_intro': 'Construye una base sólida para **tocar y cantar tus canciones favoritas con confianza en poco tiempo**.',
+                'course_base_benefits': ['**Acordes esenciales:** Domina los acordes principales para tocar el 90% de las canciones pop, rock y country.', '**Ritmos y compases:** Aprende a marcar el ritmo de forma sencilla e intuitiva para acompañar tus canciones.', '**Canciones prácticas:** Ponte manos a la obra desde la primera clase y aprende a tocar las canciones que realmente te gustan.'],
+                'pricing_title': 'Empieza Hoy a Tocar y Cantar',
+                'pricing_text': 'Elige la mejor opción para comenzar tu viaje musical:',
                 'pricing_promo': '1 clase de prueba: **€ 23,00**',
                 'pricing_promo_2': 'Paquete de 4 clases (mensual): **€ 92,00**, y **¡recibe la 5ª clase gratis!**',
                 'pricing_cta': '¡Quiero Inscribirme Ahora!',
-                'contact_title': 'Contáctenos',
+                'contact_title': '¿Todavía tienes preguntas?',
                 'contact_text': 'Envíanos un mensaje por WhatsApp y aclara tus dudas. ¡Hablemos de tus objetivos!',
                 'contact_cta': 'Contáctanos por WhatsApp'
             }
