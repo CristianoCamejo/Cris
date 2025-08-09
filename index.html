@@ -315,26 +315,32 @@
             padding: 12px 20px;
         }
 
+        /* Novo estilo para o seletor de idiomas */
         .language-switcher {
             text-align: right;
-            padding: 10px;
-            background-color: var(--primary-color);
+            padding: 10px 20px;
+            background: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 100;
         }
 
         .language-switcher button {
             background: none;
-            border: 1px solid #fff;
-            color: #fff;
+            border: none;
+            color: #333;
             cursor: pointer;
-            margin-left: 10px;
-            font-size: 0.9rem;
-            padding: 5px 10px;
+            margin-left: 5px;
+            font-size: 1.2rem;
+            padding: 5px;
             border-radius: 4px;
-            transition: background-color 0.3s ease;
+            transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
         .language-switcher button:hover {
-            background-color: var(--dark-color);
+            transform: scale(1.1);
+            opacity: 0.8;
         }
 
         .whatsapp-button {
@@ -360,15 +366,34 @@
             transform: scale(1.1);
         }
 
-        /* --- Estilos do Novo Rodapé --- */
+        /* --- Estilos do Novo Rodapé (Mais Moderno) --- */
         footer {
-            background-color: var(--dark-color);
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
             color: #fff;
-            padding: 40px 0 20px;
+            padding: 60px 0 20px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('1754445533757 (1).jpg'); /* Substitua com o caminho do seu logo */
+            background-size: 250px;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.05; /* Opacidade da marca d'água */
+            z-index: 1;
         }
 
         footer .container {
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -432,7 +457,7 @@
                 <a href="#usp" class="nav-link" data-lang-key="nav_usp">Vantagens</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Curso</a>
                 <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Valores</a>
-                <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
+                <a href="#footer" class="nav-link" data-lang-key="nav_contact">Contato</a>
             </nav>
         </div>
     </header>
@@ -502,7 +527,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="footer">
         <div class="container">
             <nav>
                 <a href="#about" data-lang-key="nav_about">Sobre</a>
@@ -574,4 +599,89 @@
                 'usp_3_text': 'The teacher adapts to your pace and musical style, ensuring that learning is fun and focused on what you want.',
                 'courses_title': 'Your Learning Plan',
                 'course_badge': '',
-                '
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text_intro': 'Intensive course, developed based on the CAGED system... Fast and practical...',
+                'course_base_benefits': ['<b>Cadences:</b> 451 Major, 451 Minor', '<b>Rhythm:</b> 3/4, 4/4', '<b>Technique:</b> Coordination Exercises', '<b>Melodies:</b> Major and Minor Scales', 'Upon completion, the student will be able to play bass, acoustic guitar, and rhythm guitar accompaniments, as well as sing and solo the melodies of songs.'],
+                'pricing_title': 'Start Your Musical Journey',
+                'pricing_text': 'Invest in yourself and your passion for music. Choose the plan that best suits your goals:',
+                'pricing_promo': '1 trial class: **$ 25.00**',
+                'pricing_promo_2': '4-class package (monthly): **$ 100.00**, and **get the 5th class free!**',
+                'pricing_cta': 'Enroll now!',
+                'contact_title': 'Still have questions?',
+                'contact_text': 'Send us a message on WhatsApp and ask your questions. Let\'s talk about your goals!',
+                'contact_cta': 'Contact us on WhatsApp'
+            },
+            'es': {
+                'nav_about': 'Acerca de',
+                'nav_usp': 'Ventajas',
+                'nav_courses': 'Curso',
+                'nav_pricing': 'Valores',
+                'nav_contact': 'Contacto',
+                'about_title': 'Aprende a tocar y cantar en el mismo curso',
+                'about_text': 'Con el Curso Essential Guitar Base, el estudiante podrá acompañar canciones como el Bajo, la Guitarra Rítmica, la Guitarra Solista y la Guitarra Acústica, además de cantar sus canciones favoritas...',
+                'hero_cta': 'Más información',
+                'usp_title': '¿Por qué el Essential Guitar Base es tu mejor opción?',
+                'usp_1_title': 'Resultados Rápidos',
+                'usp_1_text': 'El método está diseñado para que toques tus primeras canciones en solo unas semanas, sin teoría innecesaria.',
+                'usp_2_title': 'Enfoque en Tocar y Cantar',
+                'usp_2_text': 'Aprende los acordes y ritmos esenciales para acompañar tu voz y tocar tus canciones favoritas por completo.',
+                'usp_3_title': 'Clases Personalizadas',
+                'usp_3_text': 'El profesor se adapta a tu ritmo y estilo musical, garantizando que el aprendizaje sea divertido y se centre en lo que quieres.',
+                'courses_title': 'Tu Plan de Aprendizaje',
+                'course_badge': '',
+                'course_base_title': 'Essential Guitar Base',
+                'course_base_text_intro': 'Curso intensivo, desarrollado en base al sistema CAGED... Rápido y práctico...',
+                'course_base_benefits': ['<b>Cadencias:</b> 451 Mayor, 451 Menor', '<b>Ritmo:</b> 3/4, 4/4', '<b>Técnica:</b> Ejercicios de Coordinación', '<b>Melodías:</b> Escalas Mayor y Menor', 'Al finalizar, el estudiante podrá tocar los acompañamientos de Bajo, Guitarra Acústica y Guitarra Rítmica, así como cantar y hacer solos de las melodías de las canciones.'],
+                'pricing_title': 'Empieza tu Viaje Musical',
+                'pricing_text': 'Invierte en ti mismo y en tu pasión por la música. Elige el plan que mejor se adapte a tus objetivos:',
+                'pricing_promo': '1 clase de prueba: **€ 23,00**',
+                'pricing_promo_2': 'Paquete de 4 clases (mensual): **€ 92,00**, y **¡recibe la 5ª clase gratis!**',
+                'pricing_cta': '¡Inscríbete ahora!',
+                'contact_title': '¿Todavía tienes preguntas?',
+                'contact_text': 'Envíanos un mensaje por WhatsApp y aclara tus dudas. ¡Hablemos de tus objetivos!',
+                'contact_cta': 'Contáctanos por WhatsApp'
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    if (Array.isArray(translations[lang][key])) {
+                        element.innerHTML = translations[lang][key].map(item => `<li>${item}</li>`).join('');
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage('pt');
+
+            // Lógica do menu responsivo
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mainNav = document.getElementById('main-nav');
+
+            const toggleMenu = () => {
+                mainNav.classList.toggle('open');
+            };
+
+            menuToggle.addEventListener('click', toggleMenu);
+            menuClose.addEventListener('click', toggleMenu);
+
+            // Fecha o menu ao clicar em um link
+            mainNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mainNav.classList.contains('open')) {
+                        mainNav.classList.remove('open');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
