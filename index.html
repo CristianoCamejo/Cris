@@ -315,32 +315,26 @@
             padding: 12px 20px;
         }
 
-        /* Novo estilo para o seletor de idiomas */
         .language-switcher {
             text-align: right;
-            padding: 10px 20px;
-            background: none;
-            position: absolute;
-            top: 0;
-            right: 0;
-            z-index: 100;
+            padding: 10px;
+            background-color: var(--primary-color);
         }
 
         .language-switcher button {
             background: none;
-            border: none;
-            color: #333;
+            border: 1px solid #fff;
+            color: #fff;
             cursor: pointer;
-            margin-left: 5px;
-            font-size: 1.2rem;
-            padding: 5px;
+            margin-left: 10px;
+            font-size: 0.9rem;
+            padding: 5px 10px;
             border-radius: 4px;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            transition: background-color 0.3s ease;
         }
 
         .language-switcher button:hover {
-            transform: scale(1.1);
-            opacity: 0.8;
+            background-color: var(--dark-color);
         }
 
         .whatsapp-button {
@@ -366,34 +360,15 @@
             transform: scale(1.1);
         }
 
-        /* --- Estilos do Novo Rodapé (Mais Moderno) --- */
+        /* --- Estilos do Novo Rodapé --- */
         footer {
-            background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+            background-color: var(--dark-color);
             color: #fff;
-            padding: 60px 0 20px;
+            padding: 40px 0 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('1754445533757 (1).jpg'); /* Substitua com o caminho do seu logo */
-            background-size: 250px;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.05; /* Opacidade da marca d'água */
-            z-index: 1;
         }
 
         footer .container {
-            position: relative;
-            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -457,7 +432,7 @@
                 <a href="#usp" class="nav-link" data-lang-key="nav_usp">Vantagens</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Curso</a>
                 <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Valores</a>
-                <a href="#footer" class="nav-link" data-lang-key="nav_contact">Contato</a>
+                <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
             </nav>
         </div>
     </header>
@@ -527,7 +502,7 @@
         </div>
     </section>
 
-    <footer id="footer">
+    <footer>
         <div class="container">
             <nav>
                 <a href="#about" data-lang-key="nav_about">Sobre</a>
