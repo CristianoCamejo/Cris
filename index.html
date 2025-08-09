@@ -360,52 +360,146 @@
             transform: scale(1.1);
         }
 
-        /* --- Estilos do Novo Rodapé --- */
+        /* --- Início dos Estilos do Novo Rodapé --- */
         footer {
             background-color: var(--dark-color);
             color: #fff;
             padding: 40px 0 20px;
-            text-align: center;
         }
 
         footer .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 900px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo img {
+            max-width: 120px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo p {
+            font-size: 0.9rem;
+            max-width: 250px;
+            color: #ccc;
+            margin: 0;
         }
         
-        footer nav a {
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .footer-section h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+            margin-top: 5px;
+        }
+
+        .footer-section .footer-nav, .footer-section .contact-info, .footer-section .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section .footer-nav a, .footer-section .contact-info a {
             color: #fff;
-            margin: 0 15px;
             text-decoration: none;
             transition: color 0.3s ease;
-            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
         }
 
-        footer nav a:hover {
+        .footer-section .footer-nav a:hover, .footer-section .contact-info a:hover {
             color: var(--accent-color);
         }
 
-        footer .social-icons {
-            margin-top: 20px;
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info li i {
+            margin-right: 10px;
+            color: var(--accent-color);
         }
 
-        footer .social-icons a {
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
             color: #fff;
             font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        footer .social-icons a:hover {
+        .social-links a:hover {
             color: var(--accent-color);
+            transform: scale(1.1);
         }
 
-        footer .copyright {
-            margin-top: 30px;
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .footer-bottom .copyright {
             font-size: 0.9rem;
             color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                align-items: center;
+                width: 100%;
+            }
+            
+            .footer-section h4::after {
+                margin: 5px auto 0;
+            }
+            
+            .footer-logo {
+                text-align: center;
+            }
+            
+            .footer-section .footer-nav a, .footer-section .contact-info a {
+                text-align: center;
+            }
         }
         /* --- Fim dos Estilos do Novo Rodapé --- */
     </style>
@@ -504,18 +598,33 @@
 
     <footer>
         <div class="container">
-            <nav>
-                <a href="#about" data-lang-key="nav_about">Sobre</a>
-                <a href="#usp" data-lang-key="nav_usp">Vantagens</a>
-                <a href="#courses" data-lang-key="nav_courses">Curso</a>
-                <a href="#pricing" data-lang-key="nav_pricing">Valores</a>
-                <a href="https://wa.me/5551989610859" data-lang-key="nav_contact" target="_blank" rel="noopener noreferrer">Contato</a>
-            </nav>
-            <div class="social-icons">
-                <a href="https://wa.me/5551989610859" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-content">
+                <div class="footer-section footer-logo">
+                    <img src="1754445533757 (1).jpg" alt="Logotipo Guitar Class Online">
+                    <p>Sua jornada musical começa aqui. Aprenda a tocar e cantar de forma rápida e divertida.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#about" data-lang-key="nav_about">Sobre</a></li>
+                        <li><a href="#usp" data-lang-key="nav_usp">Vantagens</a></li>
+                        <li><a href="#courses" data-lang-key="nav_courses">Curso</a></li>
+                        <li><a href="#pricing" data-lang-key="nav_pricing">Valores</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><a href="https://wa.me/5551989610859" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> +55 51 98961-0859</a></li>
+                        <li><a href="mailto:exemplo@email.com"><i class="far fa-envelope"></i> exemplo@email.com</a></li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://wa.me/5551989610859" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2024 Guitar Class Online. Todos os direitos reservados.</p>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Guitar Class Online. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -579,8 +688,8 @@
                 'course_base_benefits': ['<b>Cadences:</b> 451 Major, 451 Minor', '<b>Rhythm:</b> 3/4, 4/4', '<b>Technique:</b> Coordination Exercises', '<b>Melodies:</b> Major and Minor Scales', 'Upon completion, the student will be able to play bass, acoustic guitar, and rhythm guitar accompaniments, as well as sing and solo the melodies of songs.'],
                 'pricing_title': 'Start Your Musical Journey',
                 'pricing_text': 'Invest in yourself and your passion for music. Choose the plan that best suits your goals:',
-                'pricing_promo': '1 trial class: **$ 25.00**',
-                'pricing_promo_2': '4-class package (monthly): **$ 100.00**, and **get the 5th class free!**',
+                'pricing_promo': '1 trial class: **$25.00**',
+                'pricing_promo_2': '4-class package (monthly): **$100.00**, and **get a 5th class free!**',
                 'pricing_cta': 'Enroll now!',
                 'contact_title': 'Still have questions?',
                 'contact_text': 'Send us a message on WhatsApp and ask your questions. Let\'s talk about your goals!',
@@ -611,7 +720,7 @@
                 'pricing_text': 'Invierte en ti mismo y en tu pasión por la música. Elige el plan que mejor se adapte a tus objetivos:',
                 'pricing_promo': '1 clase de prueba: **€ 23,00**',
                 'pricing_promo_2': 'Paquete de 4 clases (mensual): **€ 92,00**, y **¡recibe la 5ª clase gratis!**',
-                'pricing_cta': '¡Inscríbete ahora!',
+                'pricing_cta': 'Inscríbete ahora!',
                 'contact_title': '¿Todavía tienes preguntas?',
                 'contact_text': 'Envíanos un mensaje por WhatsApp y aclara tus dudas. ¡Hablemos de tus objetivos!',
                 'contact_cta': 'Contáctanos por WhatsApp'
