@@ -359,6 +359,55 @@
         .whatsapp-button:hover {
             transform: scale(1.1);
         }
+
+        /* --- Estilos do Novo Rodapé --- */
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        footer nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+
+        footer nav a:hover {
+            color: var(--accent-color);
+        }
+
+        footer .social-icons {
+            margin-top: 20px;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        footer .copyright {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        /* --- Fim dos Estilos do Novo Rodapé --- */
     </style>
 </head>
 <body>
@@ -382,7 +431,7 @@
                 <a href="#about" class="nav-link" data-lang-key="nav_about">Sobre</a>
                 <a href="#usp" class="nav-link" data-lang-key="nav_usp">Vantagens</a>
                 <a href="#courses" class="nav-link" data-lang-key="nav_courses">Curso</a>
-                <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Preços</a>
+                <a href="#pricing" class="nav-link" data-lang-key="nav_pricing">Valores</a>
                 <a href="#contact" class="nav-link" data-lang-key="nav_contact">Contato</a>
             </nav>
         </div>
@@ -445,21 +494,31 @@
 
     <section id="pricing">
         <div class="container">
-            <h2 data-lang-key="pricing_title">Comece Hoje a Tocar e Cantar</h2>
-            <p data-lang-key="pricing_text">Escolha a melhor opção para começar a sua jornada musical:</p>
+            <h2 data-lang-key="pricing_title">Comece Sua Jornada Musical</h2>
+            <p data-lang-key="pricing_text">Invista em você e na sua paixão pela música. Escolha o plano que melhor se adapta aos seus objetivos:</p>
             <p data-lang-key="pricing_promo">1 aula experimental: **R$ 120,00**</p>
             <p data-lang-key="pricing_promo_2">Pacote de 4 aulas (mensal): **R$ 480,00**, e **ganhe a 5ª aula grátis!**</p>
             <a href="https://wa.me/5551989610859" class="cta-button" data-lang-key="pricing_cta">Quero Me Matricular Agora!</a>
         </div>
     </section>
 
-    <section id="contact">
+    <footer>
         <div class="container">
-            <h2 data-lang-key="contact_title">Ainda tem dúvidas?</h2>
-            <p data-lang-key="contact_text">Mande uma mensagem pelo WhatsApp e tire suas dúvidas. Vamos conversar sobre seus objetivos!</p>
-            <a href="https://wa.me/5551989610859" class="cta-button" data-lang-key="contact_cta">Fale Conosco pelo WhatsApp</a>
+            <nav>
+                <a href="#about" data-lang-key="nav_about">Sobre</a>
+                <a href="#usp" data-lang-key="nav_usp">Vantagens</a>
+                <a href="#courses" data-lang-key="nav_courses">Curso</a>
+                <a href="#pricing" data-lang-key="nav_pricing">Valores</a>
+                <a href="https://wa.me/5551989610859" data-lang-key="nav_contact" target="_blank" rel="noopener noreferrer">Contato</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://wa.me/5551989610859" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Guitar Class Online. Todos os direitos reservados.</p>
+            </div>
         </div>
-    </section>
+    </footer>
 
     <a href="https://wa.me/5551989610859" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
@@ -471,7 +530,7 @@
                 'nav_about': 'Sobre',
                 'nav_usp': 'Vantagens',
                 'nav_courses': 'Curso',
-                'nav_pricing': 'Preços',
+                'nav_pricing': 'Valores',
                 'nav_contact': 'Contato',
                 'about_title': 'Aprenda a tocar e cantar em um mesmo curso',
                 'about_text': 'Com o Curso Essential Guitar Base, o aluno estará apto a acompanhar músicas conforme o Contra-Baixo, Guitarra Base, Guitarra Solo e Violão, além de Cantar as músicas prediletas...',
@@ -488,11 +547,11 @@
                 'course_base_title': 'Essential Guitar Base',
                 'course_base_text_intro': 'Curso intensivo, desenvolvido com base no sistema CAGED... Rápido e prático...',
                 'course_base_benefits': ['<b>Cadências:</b> 451 Maior, 451 Menor', '<b>Ritmo:</b> 3/4, 4/4', '<b>Técnica:</b> Exercícios de Coordenação', '<b>Melodias:</b> Escalas Maior e Menor', 'Na conclusão deste, o aluno estará apto a tocar os acompanhamentos de Contra Baixo, Violão e Guitarra, além de cantar e solar as melodias das músicas.'],
-                'pricing_title': 'Comece Hoje a Tocar e Cantar',
-                'pricing_text': 'Escolha a melhor opção para começar a sua jornada musical:',
+                'pricing_title': 'Comece Sua Jornada Musical',
+                'pricing_text': 'Invista em você e na sua paixão pela música. Escolha o plano que melhor se adapta aos seus objetivos:',
                 'pricing_promo': '1 aula experimental: **R$ 120,00**',
                 'pricing_promo_2': 'Pacote de 4 aulas (mensal): **R$ 480,00**, e **ganhe a 5ª aula grátis!**',
-                'pricing_cta': 'Faça sua matrícula agora!',
+                'pricing_cta': 'Quero Me Matricular Agora!',
                 'contact_title': 'Ainda tem dúvidas?',
                 'contact_text': 'Mande uma mensagem pelo WhatsApp e tire suas dúvidas. Vamos conversar sobre seus objetivos!',
                 'contact_cta': 'Fale Conosco pelo WhatsApp'
@@ -515,89 +574,4 @@
                 'usp_3_text': 'The teacher adapts to your pace and musical style, ensuring that learning is fun and focused on what you want.',
                 'courses_title': 'Your Learning Plan',
                 'course_badge': '',
-                'course_base_title': 'Essential Guitar Base',
-                'course_base_text_intro': 'Intensive course, developed based on the CAGED system... Fast and practical...',
-                'course_base_benefits': ['<b>Cadences:</b> 451 Major, 451 Minor', '<b>Rhythm:</b> 3/4, 4/4', '<b>Technique:</b> Coordination Exercises', '<b>Melodies:</b> Major and Minor Scales', 'Upon completion, the student will be able to play bass, acoustic guitar, and rhythm guitar accompaniments, as well as sing and solo the melodies of songs.'],
-                'pricing_title': 'Start Playing and Singing Today',
-                'pricing_text': 'Choose the best option to start your musical journey:',
-                'pricing_promo': '1 trial class: **$ 25.00**',
-                'pricing_promo_2': '4-class package (monthly): **$ 100.00**, and **get the 5th class free!**',
-                'pricing_cta': 'Enroll now!',
-                'contact_title': 'Still have questions?',
-                'contact_text': 'Send us a message on WhatsApp and ask your questions. Let\'s talk about your goals!',
-                'contact_cta': 'Contact us on WhatsApp'
-            },
-            'es': {
-                'nav_about': 'Acerca de',
-                'nav_usp': 'Ventajas',
-                'nav_courses': 'Curso',
-                'nav_pricing': 'Precios',
-                'nav_contact': 'Contacto',
-                'about_title': 'Aprende a tocar y cantar en el mismo curso',
-                'about_text': 'Con el Curso Essential Guitar Base, el estudiante podrá acompañar canciones como el Bajo, la Guitarra Rítmica, la Guitarra Solista y la Guitarra Acústica, además de cantar sus canciones favoritas...',
-                'hero_cta': 'Más información',
-                'usp_title': '¿Por qué el Essential Guitar Base es tu mejor opción?',
-                'usp_1_title': 'Resultados Rápidos',
-                'usp_1_text': 'El método está diseñado para que toques tus primeras canciones en solo unas semanas, sin teoría innecesaria.',
-                'usp_2_title': 'Enfoque en Tocar y Cantar',
-                'usp_2_text': 'Aprende los acordes y ritmos esenciales para acompañar tu voz y tocar tus canciones favoritas por completo.',
-                'usp_3_title': 'Clases Personalizadas',
-                'usp_3_text': 'El profesor se adapta a tu ritmo y estilo musical, garantizando que el aprendizaje sea divertido y se centre en lo que quieres.',
-                'courses_title': 'Tu Plan de Aprendizaje',
-                'course_badge': '',
-                'course_base_title': 'Essential Guitar Base',
-                'course_base_text_intro': 'Curso intensivo, desarrollado en base al sistema CAGED... Rápido y práctico...',
-                'course_base_benefits': ['<b>Cadencias:</b> 451 Mayor, 451 Menor', '<b>Ritmo:</b> 3/4, 4/4', '<b>Técnica:</b> Ejercicios de Coordinación', '<b>Melodías:</b> Escalas Mayor y Menor', 'Al finalizar, el estudiante podrá tocar los acompañamientos de Bajo, Guitarra Acústica y Guitarra Rítmica, así como cantar y hacer solos de las melodías de las canciones.'],
-                'pricing_title': 'Empieza Hoy a Tocar y Cantar',
-                'pricing_text': 'Elige la mejor opción para comenzar tu viaje musical:',
-                'pricing_promo': '1 clase de prueba: **€ 23,00**',
-                'pricing_promo_2': 'Paquete de 4 clases (mensual): **€ 92,00**, y **¡recibe la 5ª clase gratis!**',
-                'pricing_cta': '¡Inscríbete ahora!',
-                'contact_title': '¿Todavía tienes preguntas?',
-                'contact_text': 'Envíanos un mensaje por WhatsApp y aclara tus dudas. ¡Hablemos de tus objetivos!',
-                'contact_cta': 'Contáctanos por WhatsApp'
-            }
-        };
-
-        function changeLanguage(lang) {
-            document.documentElement.lang = lang;
-
-            document.querySelectorAll('[data-lang-key]').forEach(element => {
-                const key = element.getAttribute('data-lang-key');
-                if (translations[lang][key]) {
-                    if (Array.isArray(translations[lang][key])) {
-                        element.innerHTML = translations[lang][key].map(item => `<li>${item}</li>`).join('');
-                    } else {
-                        element.innerHTML = translations[lang][key];
-                    }
-                }
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            changeLanguage('pt');
-
-            // Lógica do menu responsivo
-            const menuToggle = document.getElementById('menu-toggle');
-            const menuClose = document.getElementById('menu-close');
-            const mainNav = document.getElementById('main-nav');
-
-            const toggleMenu = () => {
-                mainNav.classList.toggle('open');
-            };
-
-            menuToggle.addEventListener('click', toggleMenu);
-            menuClose.addEventListener('click', toggleMenu);
-
-            // Fecha o menu ao clicar em um link
-            mainNav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (mainNav.classList.contains('open')) {
-                        mainNav.classList.remove('open');
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                '
