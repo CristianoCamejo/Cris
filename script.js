@@ -1,6 +1,3 @@
-// scripts.js
-// Carrega traduções, controla menu mobile e troca de idioma
-
 const translations = {
     'pt': {
         'nav_about': 'Sobre',
@@ -165,63 +162,40 @@ const translations = {
 
 function changeLanguage(lang) {
     document.documentElement.lang = lang;
+
     document.querySelectorAll('[data-lang-key]').forEach(element => {
         const key = element.getAttribute('data-lang-key');
-        const value = translations[lang] && translations[lang][key];
-        if (!value) return;
-        if (Array.isArray(value)) {
-            element.innerHTML = value.map(item => `<li>${item}</li>`).join('');
-        } else {
-            element.innerHTML = value;
+        if (translations[lang][key]) {
+            if (Array.isArray(translations[lang][key])) {
+                element.innerHTML = translations[lang][key].map(item => `<li>${item}</li>`).join('');
+            } else {
+                element.innerHTML = translations[lang][key];
+            }
         }
     });
 }
 
-// DOMContentLoaded setup
 document.addEventListener('DOMContentLoaded', () => {
-    // Default language
     changeLanguage('pt');
 
-    // Language buttons
-    document.querySelectorAll('.language-switcher button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            if (lang) changeLanguage(lang);
-        });
-    });
-
-    // Menu toggle
+    // Lógica do menu responsivo
     const menuToggle = document.getElementById('menu-toggle');
     const menuClose = document.getElementById('menu-close');
     const mainNav = document.getElementById('main-nav');
 
-    const openMenu = () => {
-        mainNav.classList.add('open');
-        menuToggle.setAttribute('aria-expanded', 'true');
-    };
-    const closeMenu = () => {
-        mainNav.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    };
     const toggleMenu = () => {
-        if (mainNav.classList.contains('open')) closeMenu();
-        else openMenu();
+        mainNav.classList.toggle('open');
     };
 
     menuToggle.addEventListener('click', toggleMenu);
-    menuClose.addEventListener('click', closeMenu);
+    menuClose.addEventListener('click', toggleMenu);
 
-    // Close menu on link click
+    // Fecha o menu ao clicar em um link
     mainNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            if (mainNav.classList.contains('open')) closeMenu();
+            if (mainNav.classList.contains('open')) {
+                mainNav.classList.remove('open');
+            }
         });
-    });
-
-    // Close menu on Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mainNav.classList.contains('open')) {
-            closeMenu();
-        }
     });
 });
