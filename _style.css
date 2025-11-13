@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #1976d2;
-    --secondary-color: #2196f3;
-    --dark-color: #0d47a1;
+    --primary-color: #4CAF50;
+    --secondary-color: #66BB6A;
+    --dark-color: #2e7d32;
     --text-color: #333;
-    --background-color: #f4f8ff;
+    --background-color: #f0fdf4;
     --card-background: #fff;
-    --accent-color: #ff6f00;
+    --accent-color: #ff9800;
 }
 
 body {
@@ -62,7 +62,7 @@ body {
 }
 
 .menu-close {
-    display: none;
+    display: none; /* Esconde o botão de fechar por padrão */
     background: none;
     border: none;
     cursor: pointer;
@@ -490,3 +490,4 @@ footer .container {
     }
 }
 /* --- Fim dos Estilos do Novo Rodapé --- */
+
