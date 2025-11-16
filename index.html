@@ -9,23 +9,6 @@
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- =================================================== -->
-    <!-- IMPORTAÇÃO DO POPUP DE NATAL (SEM ALTERAR NADA SEU) -->
-    <!-- =================================================== -->
-    <link rel="prefetch" href="popup-natal.html">
-
-    <script>
-    window.addEventListener("load", () => {
-        fetch("popup-natal.html")
-            .then(r => r.text())
-            .then(html => {
-                const wrapper = document.createElement("div");
-                wrapper.innerHTML = html;
-                document.body.appendChild(wrapper);
-            });
-    });
-    </script>
 </head>
 <body>
 
@@ -167,3 +150,4 @@
     <script src="promocao-natal.js"></script>
 </body>
 </html>
+
